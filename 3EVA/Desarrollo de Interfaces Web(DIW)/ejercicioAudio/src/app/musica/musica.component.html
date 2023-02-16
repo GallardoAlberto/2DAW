@@ -1,0 +1,8 @@
+<div class="container">
+    <h1>Música</h1>
+    <div class="cancion" *ngFor="let cancion of canciones">
+        <p>{{cancion}}</p>
+        <button (click)="addToPlaylist(cancion)" (click)="pasarArray()">Añadir a la playlist</button>
+    </div>
+    
+</div>

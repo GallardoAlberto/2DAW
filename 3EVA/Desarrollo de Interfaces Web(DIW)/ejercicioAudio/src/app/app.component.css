@@ -1,0 +1,9 @@
+nav{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+}
+a{
+    text-decoration: none;
+    padding: 30px;
+}
