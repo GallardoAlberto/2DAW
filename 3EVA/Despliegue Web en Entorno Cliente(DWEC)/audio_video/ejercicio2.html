@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      audio,
+      button {
+        transition: all 0.5s linear;
+        box-shadow: 2px 2px 4px 0px #006773;
+        border-radius: 7px;
+        padding: 0, 5%;
+      }
+      section {
+        padding: 1%;
+        margin-left: 1%;
+        margin-top: 1%;
+        border: #006773;
+        border-style: groove;
+        border-radius: 7px;
+        display: flexbox;
+        flex-wrap: wrap;
+        width: min-content;
+      }
+      section > audio {
+        width: 239pt;
+      }
+      section:hover {
+        transition: all 0.5s linear;
+        box-shadow: 2px 2px 4px 0px #c7d8da;
+        transform: scale(1.05);
+      }
+      audio:hover,
+      audio:focus,
+      audio:active,
+      button:hover {
+        box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.4);
+        transform: scale(1.05);
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <audio controls id="player" src="Aretha.mp3"></audio>
+      <button class="play">Play</button>
+      <button class="pause">Pausa</button>
+      <button class="volumeUp">+ Volumen</button>
+      <button class="volumeDown">- Volumen</button>
+      <button class="muted">Silenciar</button>
+
+      <script>
+      let audio = document.getElementById("player");
+      let btnPlay = document.querySelector(".play");
+      let btnPause = document.querySelector(".pause");
+      let btnvolumeUp = document.querySelector(".volumeUp");
+      let btnvolumeDown = document.querySelector(".volumeDown");
+      let btnmuted = document.querySelector(".muted");
+
+      window.addEventListener("beforeunload", () => {
+        setCookie("volume", audio.volume, 365);
+      });
+
+      window.addEventListener("load", () => {
+        audio.volume = getCookie("volume") || 1;
+      });
+
+      btnPlay.addEventListener("click", () => {
+        audio.play();
+      });
+
+      btnPause.addEventListener("click", () => {
+        audio.pause();
+      });
+
+      btnvolumeUp.addEventListener("click", () => {
+        audio.volume += 0.1;
+        setCookie("volume", audio.volume, 365);
+      });
+
+      btnvolumeDown.addEventListener("click", () => {
+        audio.volume -= 0.1;
+        setCookie("volume", audio.volume, 365);
+      });
+
+      btnmuted.addEventListener("click", () => {
+        audio.volume = 0;
+        setCookie("volume", audio.volume, 365);
+      });
+
+      function setCookie(name, value, days) {
+        // Crea una nueva fecha
+        const date = new Date();
+        // Establece la fecha actual más el número de días especificados
+        date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
+        // Crea una nueva cookie con el nombre y valor especificados, y la fecha de caducidad establecida en "date"
+        document.cookie =
+          name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+      }
+
+        // Esta función se utiliza para obtener el valor de una cookie en una página web
+        function getCookie(nombreCookie) {
+          // Establece una constante llamada "valor" que contiene todas las cookies de la página web
+          const valor = "; " + document.cookie;
+          // Divide "valor" en varios fragmentos basados en "; " + nombreCookie + "=" y los guarda en la constante "partes"
+          const partes = valor.split("; " + nombreCookie + "=");
+          // Si la longitud de "partes" es igual a 2, significa que la cookie existe
+          if (partes.length == 2)
+            // Devuelve el valor de la cookie usando "pop()" y "shift()" en el fragmento correspondiente
+            return partes.pop().split(";").shift();
+        }
+        
+      </script>
+    </section>
+  </body>
+</html>

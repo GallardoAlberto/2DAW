@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<form>
+    <input class="socio" type="text" placeholder="Introducir el nombre del Socio" />
+</form>
+
+<div class="caja"></div>
+
+<body>
+
+    <script>
+        let socios = [
+            {
+                nombre: 'Marta',
+                edad: '15',
+                nivel: 'C',
+                ciudad: 'Villalba'
+            },
+            {
+                nombre: 'Max',
+                edad: '32',
+                nivel: 'B',
+                ciudad: 'Alpedrete'
+            },
+            {
+                nombre: 'Julián',
+                edad: '9',
+                nivel: 'D',
+                ciudad: 'Alpedrete'
+            },
+            {
+                nombre: 'Amadeo',
+                edad: '16',
+                nivel: 'A',
+                ciudad: 'Villalba'
+            }];
+
+        let socioAjedrez = document.querySelector('.socio');
+        let caja = document.querySelector('.caja');
+        let nombreSocio;
+
+        socioAjedrez.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                nombreSocio = socioAjedrez.value;
+                console.log(nombreSocio);
+                let encontrado = false;
+                let promesa = new Promise((existe, noExiste) => {
+                    socios.forEach(socio => {
+                        if (nombreSocio == socio.nombre) {
+                            encontrado = true;
+                            existe(caja.innerHTML = `
+                                <h1>El socio ${socio.nombre} existe</h1>
+                                <p>${socio.nivel}</p>
+                                <p>${socio.ciudad}</p>
+                            `);
+                        }
+                    });
+                    if (!encontrado) {
+                        noExiste(alert(`${nombreSocio} no es nombre del club`));
+                    }
+                });
+
+                promesa
+                    .then((mensaje) => {
+                        console.log(mensaje);
+                    })
+                    .catch((mensaje) => {
+                        console.error(mensaje);
+                    });
+            }
+        });
+    </script>
+</body>
+
+</html>

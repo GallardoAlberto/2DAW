@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Montserrat", sans-serif;
+}
+
+header nav {
+  width: 100%;
+  position: fixed;
+  border-top: 1px solid #D6C886;
+  border-bottom: 1px solid #D6C886;
+  display: flex;
+  padding: 10px;
+  background-color: #000000;
+}
+header nav #logo {
+  display: none;
+}
+header nav #patrocinador {
+  width: 150px;
+}
+header nav img {
+  padding: 0 20px;
+  width: 100px;
+}
+header nav #menu {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+}
+header nav #menu li {
+  padding: 40px 50px;
+}
+header nav #menu a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+header nav #menu a:hover {
+  color: #D6C886;
+}
+
+section .espacio_top {
+  padding: 140px 20px 20px 20px;
+}
+section h1 {
+  padding: 20px;
+  background-color: #D6C886;
+  text-shadow: 3px 3px 3px #1C3C3A;
+  text-align: center;
+  font-size: 50px;
+  text-transform: uppercase;
+  color: rgb(255, 255, 255);
+  box-shadow: inset 0px 0px 10px 2px #274948;
+}
+section div {
+  background-color: #C5CFD1;
+  box-shadow: 0px 0px 10px 2px #000000;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+section article {
+  box-shadow: 0px 0px 7px 1px #274948;
+  border: 2px solid #D6C886;
+  border-radius: 20px;
+  padding: 40px 0 10px 0;
+  width: 90%;
+  margin: 0 auto;
+  background-color: #1C3C3A;
+  margin: 20px;
+}
+section article a {
+  display: block;
+  margin: 0 auto;
+  width: 130px;
+  height: 130px;
+}
+section article a img {
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0px 0px 7px 1px #D6C886;
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+}
+section article h2 {
+  text-shadow: 3px 3px 3px #1C3C3A;
+  margin: 20px auto;
+  background-color: #D6C886;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+  text-transform: uppercase;
+  text-align: center;
+}
+section article h2:nth-child(odd) {
+  text-shadow: 2px 2px 2px #000000;
+  background-color: #1C3C3A;
+}
+
+@media (max-width: 1440px) {
+  section .espacio_top {
+    padding: 140px 20px 20px 20px;
+  }
+  section h1 {
+    padding: 20px;
+    background-color: #D6C886;
+    text-shadow: 3px 3px 3px #1C3C3A;
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 10px 2px #274948;
+  }
+  section div {
+    background-color: #C5CFD1;
+    box-shadow: 0px 0px 10px 2px #000000;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  section article {
+    box-shadow: 0px 0px 7px 1px #274948;
+    border: 2px solid #D6C886;
+    border-radius: 20px;
+    padding: 40px 0 10px 0;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #1C3C3A;
+    margin: 20px;
+  }
+  section article a {
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+  }
+  section article a img {
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0px 0px 7px 1px #D6C886;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+  }
+  section article h2 {
+    text-shadow: 3px 3px 3px #1C3C3A;
+    margin: 20px auto;
+    background-color: #D6C886;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  section article h2:nth-child(odd) {
+    text-shadow: 2px 2px 2px #000000;
+    background-color: #1C3C3A;
+  }
+}
+@media (max-width: 1175px) {
+  header nav {
+    width: 100%;
+    position: fixed;
+    border-top: 1px solid #D6C886;
+    border-bottom: 1px solid #D6C886;
+    display: flex;
+    padding: 10px;
+    background-color: #000000;
+  }
+  header nav #logo {
+    display: none;
+  }
+  header nav #patrocinador {
+    width: 150px;
+  }
+  header nav img {
+    padding: 0 20px;
+    width: 100px;
+  }
+  header nav #menu {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    justify-content: end;
+  }
+  header nav #menu li {
+    padding: 40px 50px;
+  }
+  header nav #menu a {
+    font-size: 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    transition: 0.4s;
+  }
+  header nav #menu a:hover {
+    color: #D6C886;
+  }
+  section .espacio_top {
+    padding: 140px 20px 20px 20px;
+  }
+  section h1 {
+    padding: 20px;
+    background-color: #D6C886;
+    text-shadow: 3px 3px 3px #1C3C3A;
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 10px 2px #274948;
+  }
+  section div {
+    background-color: #C5CFD1;
+    box-shadow: 0px 0px 10px 2px #000000;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  section article {
+    box-shadow: 0px 0px 7px 1px #274948;
+    border: 2px solid #D6C886;
+    border-radius: 20px;
+    padding: 40px 0 10px 0;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #1C3C3A;
+    margin: 20px;
+  }
+  section article a {
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+  }
+  section article a img {
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0px 0px 7px 1px #D6C886;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+  }
+  section article h2 {
+    text-shadow: 3px 3px 3px #1C3C3A;
+    margin: 20px auto;
+    background-color: #D6C886;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  section article h2:nth-child(odd) {
+    text-shadow: 2px 2px 2px #000000;
+    background-color: #1C3C3A;
+  }
+}
+@media (max-width: 820px) {
+  section .espacio_top {
+    padding: 140px 20px 20px 20px;
+  }
+  section h1 {
+    padding: 20px;
+    background-color: #D6C886;
+    text-shadow: 3px 3px 3px #1C3C3A;
+    text-align: center;
+    font-size: 50px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 10px 2px #274948;
+  }
+  section div {
+    background-color: #C5CFD1;
+    box-shadow: 0px 0px 10px 2px #000000;
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 0 auto;
+  }
+  section article {
+    box-shadow: 0px 0px 7px 1px #274948;
+    border: 2px solid #D6C886;
+    border-radius: 20px;
+    padding: 40px 0 10px 0;
+    width: 90%;
+    margin: 0 auto;
+    background-color: #1C3C3A;
+    margin: 20px;
+  }
+  section article a {
+    display: block;
+    margin: 0 auto;
+    width: 130px;
+    height: 130px;
+  }
+  section article a img {
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0px 0px 7px 1px #D6C886;
+    width: 120px;
+    height: 120px;
+    border-radius: 100px;
+  }
+  section article h2 {
+    text-shadow: 3px 3px 3px #1C3C3A;
+    margin: 20px auto;
+    background-color: #D6C886;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-align: center;
+  }
+  section article h2:nth-child(odd) {
+    text-shadow: 2px 2px 2px #000000;
+    background-color: #1C3C3A;
+  }
+}/*# sourceMappingURL=plantilla.css.map */

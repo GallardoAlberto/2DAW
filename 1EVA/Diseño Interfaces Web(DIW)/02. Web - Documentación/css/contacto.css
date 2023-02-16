@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Montserrat", sans-serif;
+}
+
+header nav {
+  width: 100%;
+  position: fixed;
+  border-top: 1px solid #D6C886;
+  border-bottom: 1px solid #D6C886;
+  display: flex;
+  padding: 10px;
+  background-color: #000000;
+}
+header nav #logo {
+  display: none;
+}
+header nav #patrocinador {
+  width: 150px;
+}
+header nav img {
+  padding: 0 20px;
+  width: 100px;
+}
+header nav #menu {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+}
+header nav #menu li {
+  padding: 40px 50px;
+}
+header nav #menu a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+header nav #menu a:hover {
+  color: #D6C886;
+}
+
+article {
+  padding: 150px 20px 20px 20px;
+}
+article form {
+  width: 40%;
+  margin: 0 auto;
+  border-style: solid;
+  border-radius: 7px;
+}
+article form label {
+  padding: 20px;
+}
+article form input, article form select {
+  margin: 10px;
+  padding: 8px;
+}/*# sourceMappingURL=contacto.css.map */

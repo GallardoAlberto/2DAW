@@ -1,0 +1,133 @@
+[
+    {
+        "dni" : "123456789R",
+        "nombre" : "Manolo",
+        "codPostal" : 28400,
+        "estudios": [
+              {
+                "tipo": "no universitario",
+                "nombre": "ESO",
+                "organo_acreditador": "Comunidad de Madrid",
+                "duracion_horas": 1200
+              },
+              {
+                "tipo": "universitario",
+                "nombre": "Medicina",
+                "universidad": "Universidad complutense",
+                "duracion_anios": 4800
+              }
+        ],
+        "idiomas" : [
+            {
+                "nombre": "Inglés",
+                "organo_acreditador": "Escuela Oficial de idiomas",
+                "nivel" : "B1"
+              }
+        ],
+        "aficiones" : [
+            
+        ],
+        "Otros" : [
+            {
+                "carnetDeConducir" : "Tipo B"
+            }
+        ]
+    }
+
+    ,
+
+    {
+        "dni" : "123231789R",
+        "nombre" : "Pepe",
+        "codPostal" : 28400,
+        "estudios": [
+              {
+                "tipo": "no universitario",
+                "nombre": "Primaria",
+                "organo_acreditador": "Comunidad de Madrid",
+                "duracion_horas": 600
+              }
+        ],
+        "idiomas" : [
+            {
+                "nombre": "Inglés",
+                "organo_acreditador": "Escuela Oficial de idiomas",
+                "nivel" : "A1"
+              }
+        ],
+        "aficiones" : [
+            {
+                "deporte" : "Fútbol"
+            }
+        ],
+        "Otros" : [
+
+        ]
+    }
+    
+    ,
+
+    {
+        "dni" : "987654321R",
+        "nombre" : "Guardiola",
+        "codPostal" : 28430,
+        "estudios": [
+              {
+                "tipo": "universitario",
+                "nombre": "INEF",
+                "universidad": "Universidad complutense",
+                "duracion_anios": 4800
+              }
+        ],
+        "idiomas" : [
+            {
+                "nombre": "Inglés",
+                "organo_acreditador": "Escuela Oficial de idiomas",
+                "nivel" : "A1"
+              }
+        ],
+        "aficiones" : [
+            {
+                "deporte" : "Fútbol"
+
+            }
+        ],
+        "Otros" : [
+            {
+                "carnetDeConducir" : "Tipo B"
+            }
+        ]
+    }
+
+    ,
+
+    {
+        "dni" : "922254321R",
+        "nombre" : "Mohamed",
+        "codPostal" : 28430,
+        "estudios": [
+              {
+                "tipo": "no universitario",
+                "nombre": "ESO",
+                "organo_acreditador": "Comunidad de Madrid",
+                "duracion_anios": 1200
+              }
+        ],
+        "idiomas" : [
+            {
+                "nombre": "Inglés",
+                "organo_acreditador": "Escuela Oficial de idiomas",
+                "nivel" : "C1"
+              }
+        ],
+        "aficiones" : [
+            {
+                "deporte" : "Fútbol"
+
+            }
+        ],
+        "Otros" : [
+
+        ]
+    }
+]

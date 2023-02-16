@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital@0;1&display=swap');
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+    /* border-style: solid; */
+}
+.container{
+    padding: 20px 0;
+}
+h1{
+    color: #a02c29;
+    padding: 7px 20px;
+    font-size: 25px;
+}
+.datos{
+    width: 500px;
+    margin: 0px auto;
+    box-shadow: 3px 3px 0px 1px #a02c29;
+    border: 2px solid #a02c29;
+    background-color: #fee4c3;
+}
+.datos p{
+    width: 90%;
+    margin: auto;
+    color: #d14108;
+    font-weight: bolder;
+    background-color: #deb887;
+}
+input{
+    display: flex;
+    margin: auto;
+    width: 90%;
+}
+.agregar{
+    border-radius: 7px;
+    border-style: none;
+    width: 70px;
+    display: block;
+    padding: 5px;
+    margin: 30px 5%;
+    background-color: #228053;
+    color: white;
+    cursor: pointer;
+}
+.empleados p{
+    background-color: #fee4c3;
+    padding: 5px;
+    color: black;
+}
+.director, .directora{
+    color: red;
+}
+.botones{
+    color: green;
+}
+
+.datos--empleado{
+    width: 500px;
+    margin: 0px auto;
+    box-shadow: 3px 3px 0px 1px #a02c29;
+    border: 2px solid #a02c29;
+    background-color: #fee4c3;
+}
+.datos--empleado p{
+    width: 90%;
+    margin: auto;
+    color: #d14108;
+    font-weight: bolder;
+    background-color: #deb887;
+}

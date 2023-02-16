@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        padding: 0%;
+        margin: 0%;
+      }
+      body {
+        height: 100vh;
+        background-color: #8756d4;
+        display: grid;
+        place-items: center;
+      }
+      .container {
+        width: 50%;
+        background-color: #f0dbf0;
+      }
+      .container h2,
+      h1 {
+        text-align: center;
+        padding: 30px;
+      }
+      .container h1 {
+        color: #df66af;
+      }
+      .container h2 {
+        color: #4d9b79;
+      }
+      .container .tiempoBarra {
+        display: grid;
+        place-items: center;
+        width: 70%;
+        margin: 0 auto;
+      }
+      .container ol {
+        padding: 20px 50px;
+      }
+      .container li {
+        padding: 15px 0;
+        color: #dd79bc;
+      }
+      .vol {
+        font-size: 20px;
+        position: relative;
+        top: 20px;
+        left: 80%;
+      }
+      .tiempo {
+        position: relative;
+        top: 40px;
+        left: 5%;
+        font-size: 20px;
+      }
+      .tiempoBarra {
+        appearance: none;
+        height: 5px;
+        background-color: rgb(214, 214, 214);
+      }
+      input[type="range"].tiempoBarra::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        height: 15px;
+        border: 1px solid white;
+        background-color: black;
+        width: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <p class="tiempo">0:00 / 0:00</p>
+      <p class="vol">
+        Vol: <input class="volumen" type="range" min="0" max="100" />
+      </p>
+      <h2>Reproduciendo:</h2>
+      <input class="tiempoBarra" type="range" step="1" min="0" value="0" />
+      <h1>Mi música</h1>
+      <ol class="listaOrdenada"></ol>
+      <audio class="audio" src=""></audio>
+    </div>
+
+    <script>
+      let container = document.querySelector(".container");
+      let listaOrdenada = document.querySelector(".listaOrdenada");
+      let audio = document.querySelector(".audio");
+      let volumen = document.querySelector(".volumen");
+
+      volumen.addEventListener("input", () => {
+        console.log(audio.volume);
+        audio.volume = volumen.value / 100;
+      });
+
+      let arrayCanciones = [
+        "Abrelapuerta.mp3",
+        "Aretha.mp3",
+        "BeboyCigala.mp3",
+        "CryBaby.mp3",
+        "DiasEscuela.mp3",
+        "Ifeeltheearth.mp3",
+        "Whatsup.mp3",
+      ];
+
+      arrayCanciones.forEach((element) => {
+        let li = document.createElement("li");
+        li.innerHTML = `${element}`;
+        listaOrdenada.appendChild(li);
+      });
+
+      arrayLi = listaOrdenada.getElementsByTagName("li");
+      let h2 = document.querySelector("h2");
+
+      let tiempoBarra = document.querySelector(".tiempoBarra");
+      let cont;
+      for (let i = 0; i < arrayLi.length; i++) {
+        arrayLi[i].addEventListener("click", () => {
+          // Restablecer el color de todos los elementos a su valor original
+          for (let j = 0; j < arrayLi.length; j++) {
+            arrayLi[j].style.color = "#dd79bc";
+          }
+          h2.innerHTML = `Reproduciendo: ${arrayLi[i].innerHTML}`;
+          arrayLi[i].style.color = "#917be6";
+          audio.src = arrayLi[i].innerHTML;
+          audio.play();
+          cont = i;
+          console.log(cont);
+        });
+      }
+
+      audio.addEventListener("loadedmetadata", function () {
+        tiempoBarra.setAttribute("max", audio.duration);
+      });
+      tiempoBarra.addEventListener("change", (e) => {
+        audio.currentTime = e.target.value;
+      });
+
+      let tiempo = document.querySelector(".tiempo");
+
+      audio.addEventListener("loadedmetadata", (e) => {
+        let minutesDuration = Math.floor(audio.duration / 60);
+        let secondsDuration = Math.floor(audio.duration % 60);
+        let duracion = `${minutesDuration}:${secondsDuration
+          .toString()
+          .padStart(2, "0")}`;
+
+        tiempo.innerHTML = `0:00/${duracion}`;
+      });
+
+      audio.addEventListener("timeupdate", (e) => {
+        let percentComplete = (audio.currentTime / audio.duration) * 100;
+        console.log(tiempoBarra.value);
+        tiempoBarra.value = audio.currentTime;
+        let minutes = Math.floor(audio.currentTime / 60);
+        let seconds = Math.floor(audio.currentTime % 60);
+        let FormatoDelTiempo = `${minutes}:${seconds
+          .toString()
+          .padStart(2, "0")}`;
+        let minutesDuration = Math.floor(audio.duration / 60);
+        let secondsDuration = Math.floor(audio.duration % 60);
+        let duracion = `${minutesDuration}:${secondsDuration
+          .toString()
+          .padStart(2, "0")}`;
+
+        tiempo.innerHTML = `${FormatoDelTiempo}/${duracion}`;
+      });
+
+      let nuevoaudio;
+      audio.addEventListener("ended", () => {
+        for (let j = 0; j < arrayLi.length; j++) {
+          arrayLi[j].style.color = "#dd79bc";
+        }
+
+        if (cont === arrayCanciones.length - 1) {
+          cont = 0;
+          nuevoaudio = arrayCanciones[0];
+          arrayLi[0].style.color = "#917be6";
+        } else {
+          arrayLi[cont + 1].style.color = "#917be6";
+          nuevoaudio = arrayCanciones[cont + 1];
+          cont++;
+        }
+        audio.src = nuevoaudio;
+        audio.play();
+      });
+    </script>
+  </body>
+</html>

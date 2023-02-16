@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <title>Ejercicio 9</title>
+
+    <script>
+        function anade() {
+            let alimento = prompt("Que quieres añadir?");
+
+            let lista = document.getElementById('lista');
+            let li = document.createElement('li');
+            let contenido = document.createTextNode(alimento);
+
+            lista.appendChild(li);
+            li.appendChild(contenido);
+        }
+    </script>
+</head>
+
+<body>
+    <ul id="lista">
+        <li>Arroz</li>
+        <li>Sal</li>
+        <li>Tomates</li>
+        <li>Plátanos</li>
+        <li>Queso crema</li>
+    </ul>
+    <input type="button" value="Añadir elemento" onclick="anade()">
+</body>
+
+</html>

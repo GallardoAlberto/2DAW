@@ -1,0 +1,8 @@
+<h1>Portfolio</h1>
+
+<section class="container">
+    <div *ngFor="let cocina of cocinas">
+        <img (dblclick)="goDetails(cocina.image, cocina.description)" src="{{cocina.image}}" alt="">
+        <p>{{cocina.description}}</p>
+    </div>
+</section>

@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+$dorado : #D6C886;
+$plateado : #C5CFD1;
+$negro : #000000;
+$blanco : rgb(255, 255, 255);
+$verdeClaro : #274948;
+$verdeOscuro : #1C3C3A;
+$fondoGris : #C5CFD1;
+$naranja : #fc5301;
+ 
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Montserrat', sans-serif;
+    // border-style: solid;
+    // color: white;
+}
+header{
+
+    nav{
+        width: 100%;
+        position: fixed;
+        border-top: 1px solid $dorado;
+        border-bottom: 1px solid $dorado;
+        display: flex;
+        padding: 10px;
+        background-color: $negro;
+        #logo{
+            display: none;
+        }
+        #patrocinador{
+            width: 150px;
+        }
+        img{
+            padding: 0 20px;
+            width: 100px;
+        }
+        #menu{
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: end;
+            li{
+                padding: 40px 50px;
+            }
+            a{
+                font-size: 20px;
+                text-decoration: none;
+                color: $blanco;
+                transition: 0.4s;
+                &:hover{
+                    color: $dorado;
+                }
+            }
+        }
+    }
+}
+section{
+    #clasificacion{
+        padding: 170px 20px 40px 20px;
+        background-color: $fondoGris;
+        table{
+            background-color: $verdeOscuro;
+            border: 1px solid $blanco;
+            margin: 0 auto;
+            border-radius: 7px;
+            box-shadow: 0px 0px 20px 2px;
+            tr{
+                .textoIzq{
+                    text-align: left;
+                }
+                .negrita{
+                    font-weight: 600;
+                    color: #e7e7e7;
+
+                }
+                td{
+                    border-radius: 7px;
+                    color: #D6C886;
+                    border: 1px solid $blanco;
+                    padding: 20px;
+                    text-align: center;
+                    font-size: 20px;
+                }
+                
+                }
+                #titulo{
+                    td{
+                        color: #e7e7e7;
+                        background-color: #000000;
+
+                    }
+                }
+                #equipo{
+                    td{
+                        background-color: #466e6d;
+                    }
+                
+                }
+            }
+        }
+    }
+

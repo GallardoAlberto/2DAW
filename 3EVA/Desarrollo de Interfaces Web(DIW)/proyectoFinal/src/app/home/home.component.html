@@ -1,0 +1,20 @@
+<section class="container welcome">
+  <h1>Hello, Welcome to my portfolio</h1>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta dicta
+    commodi impedit a exercitationem voluptates non reprehenderit earum
+    voluptatum ab suscipit unde doloremque error deleniti autem reiciendis,
+    accusantium, nam dolores! Lorem ipsum dolor sit amet consectetur adipisicing
+    elit. Earum, accusamus. Repellendus quos placeat veritatis totam quas ipsum
+    expedita soluta quaerat provident deserunt facere doloribus, pariatur velit
+    nihil id, dolorum quae?
+  </p>
+
+  <button (click)="goAbout()">More About me</button>
+</section>
+
+<section class="container cocinas">
+  <div class="container--cocinas" *ngFor="let cocina of cocinas">
+    <img src="{{ cocina.image }}" alt="" />
+  </div>
+</section>

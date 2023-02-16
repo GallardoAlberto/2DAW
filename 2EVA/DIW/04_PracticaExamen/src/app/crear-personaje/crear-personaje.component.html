@@ -1,0 +1,79 @@
+<div class="container">
+
+    <!-- ngModel:
+    Ejemplo, que al ir poniendo los valores de el personaje, 
+    se vayan actualizando los valores en una lista para visualizar 
+    como le quedaría al Usuario a medida que lo escribe
+    
+    Importante --- Hay que importar en el app.module.ts el FormsModule 
+    para que funcione, si no da un error que no tiene nada que ver y
+    puede llevar a rayadas mentales -->
+    <p>
+        <input type="text" placeholder="Nombre" [(ngModel)]="characterName" #name>
+    </p> 
+
+    <p>
+        <input type="text" placeholder="Habilidad 1" [(ngModel)]="hability1Name" #hability1>
+    </p>
+
+    <p>                 
+        <input type="text" placeholder="Habilidad 2" [(ngModel)]="hability2Name" #hability2>
+    </p>
+
+    <p>
+        <input type="text" placeholder="Habilidad 3" [(ngModel)]="hability3Name" #hability3>
+    </p>
+
+    <p>
+        <input type="text" placeholder="Tipo" [(ngModel)]="typeName" #type>
+    </p>
+
+    <input type="button" (click)="agregar(name.value, hability1.value, hability2.value, hability3.value, type.value)" value="Crear">
+
+    <!-- ngIf:
+    Ejemplo, que las variables que van a registrar a los personajes,
+    al menos una no este vacia para mostrarle como quedaría el nuevo 
+    personaje al usuario -->
+
+    <div class="newCharacterList"
+        *ngIf="characterName != '' || hability1Name != '' || hability2Name != '' || hability3Name != '';else mensaje">
+        <h1>CREACIÓN DE PERSONAJE</h1>
+        <ul>
+            <li>NOMBRE DEL PERSONAJE: {{characterName}}</li>
+            <li>NOMBRE HABILIDAD 1: {{hability1Name}}</li>
+            <li>NOMBRE HABILIDAD 2: {{hability2Name}}</li>
+            <li>NOMBRE HABILIDAD 3: {{hability3Name}}</li>
+            <li>TIPO : {{typeName}}</li>
+        </ul>
+    </div>
+
+
+    <ng-template #mensaje>
+        <p [ngStyle]="{color : 'red', backgroundColor : 'black', textAlign : 'center', padding : '20px'}">Empieza a escribir para que se muestre como quedaria el personaje</p>
+    </ng-template>
+
+    <!-- ngFor
+    Nos muestra la lista de los personajes que vamos agregando al 
+    array creado anteriormente en un modelo, recorriendo el array creado.
+    -->
+
+    <div class="filterList" *ngIf="personajes.length != 0">
+        <h1>FILTRA POR TIPO</h1>
+        <select name="filterType" #filterType>
+            <option value="normal">Normal</option>
+            <option value="moro">Moro</option>
+            <option value="planta">Planta</option>
+        </select>
+
+        <input type="button" (click)="filtro(filterType.value)" value="filtro">
+
+        <div class="characterList">
+            <h1>LISTA DE PERSONAJES</h1>
+            <ul *ngFor="let personaje of personajes" [ngSwitch]="personaje.type">
+                <li *ngSwitchCase="filterType.value">{{personaje.nombre}} - {{personaje.habilidad1}} - {{personaje.habilidad2}} - {{personaje.habilidad3}} - {{personaje.type}}</li>
+            </ul>
+        </div>
+    </div>
+    
+
+</div>

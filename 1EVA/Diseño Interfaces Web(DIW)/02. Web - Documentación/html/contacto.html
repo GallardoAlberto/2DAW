@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/contacto.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="icon" href="../multimedia/PicsArt_09-17-06.44.46.png">
+    <title>Deportivo Sierra Bares</title>
+  </head>
+
+  <body>
+    <header>
+      <nav id="nav" data-aos="fade-down" data-aos-duration="1500">
+        <a href="index.html"><img id="logo5" src="../multimedia/Picsart_22-06-09_11-55-39-793.png" alt="logoQuintoAniversario" /></a>
+        <img id="logo" src="../multimedia/PicsArt_09-17-06.44.46.png" alt="logo">
+        <a href="https://www.elroblecolladovillalba.es/"><img id="patrocinador" src="../multimedia/Picsart_22-07-02_23-00-13-372.png" alt=""></a>  
+        <ul id="menu">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="plantilla.html">Plantilla</a></li>
+          <li><a href="clasificacion.html">Clasificación</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section>
+      <article>
+        <form method="POST">
+          <div>
+            <label>Nombre: </label>
+            <input type="text" name="nombre" placeholder="Nombre" autofocus required>
+          </div>
+          <div>
+            <label>Apellidos: </label>
+            <input type="text" name="apellidos" placeholder="Apellidos">
+          </div>
+          <div>
+            <label>Télefono: </label>
+            <input type="tel" name="nombre" placeholder="Télefono" required>
+          </div>
+          <div>
+            <label>E-mail: </label>
+            <input type="email" name="nombre" placeholder="E-mail" required>
+          </div>
+          <div>
+            <label>Asunto: </label>
+            <select>
+              <option value="preguntas">Preguntas</option>
+              <option value="pruebas">Pruebas</option>
+              <option value="merchandising">Merchandising</option>
+              <option value="bono">Bono anual</option>
+              <option value="otros">Otros</option>
+            </select>
+          </div>
+          <div>
+            <input type="reset">
+            <input type="submit">
+          </div>
+        </form>
+      </article>
+    </section>
+
+    <script src="../js/menu.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration : 2100
+        });
+      </script>
+  </body>
+</html>

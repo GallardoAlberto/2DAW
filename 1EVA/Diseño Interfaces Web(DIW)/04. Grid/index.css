@@ -1,0 +1,42 @@
+*{
+    border-style: solid;
+    margin: 0%;
+    padding: 0%;
+}
+.container{
+    display: grid;
+
+    /* ancho de las columnas => columna1 , columna2; */
+    /* grid-template-columns: 3fr 2fr 1fr;      */
+
+    grid-template-columns: repeat(5, 1fr);
+
+    /* espacio entre lineas */
+    gap: 20px;
+
+}
+.container > div{
+    background-color: rgb(212, 80, 80);
+    padding: 1em;
+}
+.container > div:hover{
+    background-color: rgb(124, 124, 124);
+}
+.container_div{
+    /* grid-colum => sobre 6, desplaza los elementos hacia abajo */
+    grid-column: 1/3;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+
+}
+.container_div > div:hover{
+    background-color: rgb(38, 63, 92);
+}
+.container_div2{
+    display: grid;
+    grid-template-rows: 2fr 1fr 1fr;
+}
+.elemento1{
+    align-self: center;
+}

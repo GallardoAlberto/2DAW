@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <input class="id" type="text" placeholder="Introducir identificador" />
+    <input type="button" value="Enviar" />
+  </form>
+  <script>
+    let usuarios = [
+      {
+        id: 1,
+        nombre: "Juan",
+      },
+      {
+        id: 2,
+        nombre: "Pedro",
+      },
+      {
+        id: 3,
+        nombre: "Marta",
+      },
+    ];
+    let numeros = [
+      {
+        id: 1,
+        num: "123454562",
+      },
+      {
+        id: 2,
+        num: "255555555",
+      },
+      {
+        id: 3,
+        num: "355555555",
+      },
+    ];
+
+    let btnEnviar = document.querySelector('[value="Enviar"]');
+    let input = document.querySelector(".id");
+
+    btnEnviar.addEventListener("click", () => {
+      let idBuscado = parseInt(input.value);
+
+      let promesa1 = new Promise((resolve, reject) => {
+        let existeU = false;
+        usuarios.forEach((usuario) => {
+          if (usuario.id === idBuscado) {
+            existeU = true;
+          }
+        });
+        if (existeU) {
+          resolve("Existe el usuario");
+        } else {
+          reject("No existe el usuario");
+        }
+      });
+
+      promesa1
+        .then((mensaje) => {
+          console.log(mensaje);
+          let existeT = false;
+          let promesa2 = new Promise((resolve, reject) => {
+            numeros.forEach((numero) => {
+              if (numero.id === idBuscado) {
+                existeT = true;
+              }
+            });
+            if (existeT) {
+              resolve("Existe el Télefono");
+            } else {
+              reject("No existe número de teléfono");
+            }
+          });
+          return promesa2;
+        })
+        .then((mensaje) => {
+          console.log(mensaje);
+        })
+        .catch((mensaje) => {
+          console.error(mensaje);
+        });
+    });
+  </script>
+</body>
+
+</html>

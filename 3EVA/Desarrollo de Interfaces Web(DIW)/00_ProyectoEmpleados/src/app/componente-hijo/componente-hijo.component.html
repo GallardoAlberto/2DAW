@@ -1,0 +1,57 @@
+
+<div class="empleados">
+  <p
+    appEstiloPersonalizado1
+    [ngStyle]="{ color: !((i + 1) % 2) ? 'blue' : 'black' }"
+    *ngIf="i % 5 != 0 || i == 0; else linea"
+  >
+    {{ i + 1 }} {{ empleado.nombre }} {{ empleado.apellido }}
+    {{ empleado.salario }}
+    <span
+      [ngClass]="{
+        directora: empleado.cargo == 'Directora',
+        director: empleado.cargo == 'Director',
+        botones: empleado.cargo == 'Botones'
+      }"
+      >{{ empleado.cargo }}
+    </span>
+  </p>
+
+  <div>
+    <ul style="list-style: none;">
+      <li *ngFor="let caracteristica of arrayCaract">
+      {{caracteristica}}
+      </li>
+      </ul>
+      <app-carac-emp (caractemp)="anadirCaract($event)"></app-carac-emp>
+  </div>
+
+  <ng-template #linea>
+    <hr />
+    <p
+      appEstiloPersonalizado1
+      [ngStyle]="{ color: !((i + 1) % 2) ? 'blue' : 'black' }"
+    >
+      {{ i + 1 }} {{ empleado.nombre }} {{ empleado.apellido }}
+      {{ empleado.salario }}
+      <span
+        [ngClass]="{
+          directora: empleado.cargo == 'Directora',
+          director: empleado.cargo == 'Director',
+          botones: empleado.cargo == 'Botones'
+        }"
+        >{{ empleado.cargo }}
+      </span>
+    </p>
+
+    <div>
+      <ul style="list-style: none;">
+        <li *ngFor="let caracteristica of arrayCaract">
+        {{caracteristica}}
+        </li>
+        </ul>
+        <app-carac-emp (caractemp)="anadirCaract($event)"></app-carac-emp>
+    </div>
+  </ng-template>
+
+</div>

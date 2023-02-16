@@ -1,0 +1,12 @@
+.container{
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    margin: 50px auto;
+    width: 400px;
+    border-style: solid;
+    border-radius: 20px;
+}
+.container h2{
+    padding: 20px 0;
+}

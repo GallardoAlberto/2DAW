@@ -1,0 +1,43 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Geo con mapa</title>
+    <script
+      type="text/javascript"
+      src="http://maps.google.com/maps/api/js?sensor=false"
+    ></script>
+  </head>
+  <body>
+    <div id="map" style="width: 400px; height: 400px"></div>
+    <script>
+      if(navigator.geolocation) {
+      alert('El explorador soporta geolocalización');
+      } else {
+      alert('El explorador NO soporta geolocalización');
+      }
+      navigator.geolocation.getCurrentPosition(function (position) {
+      var latitud = position.coords.latitude,
+      longitud = position.coords.longitude;
+      alert('latitud ' + latitud);
+      alert('longitud ' + longitud);
+      alert('Precisión' + position.coords.accuracy);
+      var latlng = new
+      google.maps.LatLng(position.coords.latitude, position.coords.longitude)
+      var myOptions = {
+      zoom: 15,
+      center: latlng,
+      mapTypeControl: false,
+      navigationControlOptions: {style:
+      google.maps.NavigationControlStyle.SMALL},
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+      }
+      var map = new
+      google.maps.Map(document.getElementById("map"), myOptions)
+      var marker = new google.maps.Marker({
+      position: latlng,
+      map: map,title:"Estás aquí! (en un radio de "+position.coords.accuracy+" metros)"
+      })
+      });
+    </script>
+  </body>
+</html>

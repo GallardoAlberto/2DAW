@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Mi lista de la compra</h1>
+
+    <div>
+        <input type="text" id="campo">
+        <button id="btnAñadir">Añadir a la lista</button>
+    </div>
+
+    <ul class="lista"></ul>
+
+    <p><i>Nota: Puedes eliminar elementos de la lista haciendo doble click sobre ellos</i></p>
+    <button id="btnReset">Resetear la lista y borrarla de la memoria</button>
+
+    <script>
+        let campo = document.getElementById("campo");
+        let btnAñadir = document.querySelector("#btnAñadir");
+        let btnReset = document.querySelector("#btnReset");
+        let lista = document.querySelector(".lista");
+
+        let arrayAlimentos = [];
+
+        // Obtenga el valor del local storage al cargar la página
+        window.onload = function () {
+            let items = JSON.parse(localStorage.getItem("arrayAlimentos")) || [];
+            arrayAlimentos = items;
+
+            // Recorra los items y agregue su valor al array y a la lista
+            for (let i = 0; i < items.length; i++) {
+                let valor = items[i];
+                let p = document.createElement("p");
+                p.innerHTML = `
+                  <li>${valor}</li>
+              `;
+                lista.appendChild(p);
+            }
+
+            let liArray = document.querySelectorAll("li");
+
+            liArray.forEach((li) => {
+                li.addEventListener("dblclick", (event) => {
+                    event.target.remove();
+                    let index = arrayAlimentos.indexOf(event.target.textContent);
+                    arrayAlimentos.splice(index, 1);
+
+                    localStorage.setItem("arrayAlimentos", JSON.stringify(arrayAlimentos));
+                });
+            });
+
+            liArray.forEach((li) => {
+                btnReset.addEventListener("click", () => {
+                    li.remove();
+                    arrayAlimentos.length = 0;
+                    localStorage.removeItem("arrayAlimentos");
+                });
+            });
+        };
+
+        btnAñadir.addEventListener("click", () => {
+            let p = document.createElement("p");
+
+            arrayAlimentos.push(campo.value);
+            console.table(arrayAlimentos);
+
+            p.innerHTML = `
+                <li>${campo.value}</li>
+            `;
+
+            localStorage.setItem("arrayAlimentos", JSON.stringify(arrayAlimentos));
+
+            lista.appendChild(p);
+            console.log(localStorage.getItem("arrayAlimentos"));
+
+            let liArray = document.querySelectorAll("li");
+
+            liArray.forEach((li) => {
+                li.addEventListener("dblclick", (event) => {
+                    event.target.remove();
+                    let index = arrayAlimentos.indexOf(event.target.innerText);
+                    if (index > -1) {
+                        arrayAlimentos.splice(index, 1);
+                    }
+                    localStorage.setItem("arrayAlimentos", JSON.stringify(arrayAlimentos));
+                    console.table(arrayAlimentos);
+                    console.log(localStorage.getItem("arrayAlimentos"));
+                });
+            });
+
+            liArray.forEach((li) => {
+                btnReset.addEventListener("click", () => {
+                    liArray.forEach((li) => li.remove());
+                    arrayAlimentos.length = 0;
+                    localStorage.removeItem("alimentos");
+                });
+            });
+
+            campo.value="";
+
+        });
+    </script>
+</body>
+
+</html>

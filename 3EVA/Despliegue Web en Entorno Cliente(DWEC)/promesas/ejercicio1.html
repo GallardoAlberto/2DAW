@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejercicio 1</title>
+  </head>
+  <body>
+    Se desea generar un número aleatorio comprendido entre 1 y 12. Se admiten
+    como correctos los números >= 5. Así que, queremos construir una promesa que
+    visualiza si el número aleatorio es correcto, “Ha salido un número correcto,
+    número” mediante el uso de console.log(). Si la promesa es rechazada, se
+    visualiza un mensaje de error indicando que el número es menor que 5.
+
+    <br /><br /><br />
+    <form class="formulario">
+      <input
+        class="dato"
+        type="number"
+        placeholder="Número de veces a ejecutar"
+      />
+      <input class="enviar" type="submit" value="Enviar" />
+    </form>
+    <script>
+      let formulario = document.querySelector(".formulario");
+      let dato = document.querySelector(".dato");
+      let enviar = document.querySelector(".enviar");
+
+      console.log(dato);
+      enviar.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log(dato.value);
+
+        for (let i = 0; i < parseInt(dato.value); i++) {
+          setTimeout(() => {
+            let promesa = new Promise((correcto, menor) => {
+              let numRandom = Math.round(Math.random() * 12);
+              if (numRandom >= 5)
+                correcto("Ha salido un número correcto, " + numRandom);
+              else menor(Error("El número es menor que 5"));
+            });
+
+            promesa
+              .then((verdadero) => {
+                console.log(verdadero);
+              })
+              .catch((falso) => {
+                console.log(falso);
+              });
+          }, 2000);
+        }
+      });
+
+      // let veces = prompt("Veces a ejecutar");
+
+      // for (let i = 0; i < veces; i++) {
+      //     setTimeout(() =>{
+      //     let promesa = new Promise((correcto, menor) => {
+      //     let numRandom = Math.round((Math.random() * 12))  ;
+      //     if (numRandom >= 5)
+      //       correcto("Ha salido un número correcto, " + numRandom);
+      //     else menor(Error("El número es menor que 5"));
+      //   });
+
+      //   promesa
+      //     .then((verdadero) => {
+      //         console.log(verdadero);
+      //     })
+      //     .catch((falso) => {
+      //         console.log(falso);
+      //     });
+      //   }, 5000)
+      // }
+    </script>
+  </body>
+</html>

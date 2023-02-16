@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
+html {
+  margin: 0 auto;
+  width: 70%;
+}
+html body {
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  background-color: #0e4e90;
+}
+html body #inicio {
+  height: 100vh;
+}
+html body #inicio #navbar .contenedor {
+  display: flex;
+  justify-content: space-between;
+}
+html body #inicio #navbar .contenedor .logo {
+  text-transform: uppercase;
+  font-size: 30px;
+}
+html body #inicio #navbar .contenedor ul {
+  display: flex;
+  list-style-type: none;
+}
+html body #inicio #navbar .contenedor ul li {
+  text-transform: uppercase;
+  padding: 0 20px;
+}
+html body #inicio #navbar .contenedor ul li a {
+  text-decoration: none;
+  color: white;
+}
+html body #inicio #portada .contenedor .portada-fila {
+  margin-top: 15%;
+  display: flex;
+}
+html body #inicio #portada .contenedor .portada-fila-txt .large {
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+html body #inicio #portada .contenedor .portada-fila-txt .mayus {
+  text-transform: uppercase;
+}
+html body #inicio #portada .contenedor .portada-fila-txt h1 {
+  padding: 20px 0;
+  text-transform: uppercase;
+}
+html body #inicio #portada .contenedor .portada-fila-txt h1 .txt-secundario {
+  color: #00b5dc;
+}
+html body #inicio #portada .contenedor .portada-fila-txt a {
+  background-color: #00b5dc;
+  border-radius: 30px;
+  padding: 10px 20px;
+  color: white;
+}
+html body #inicio #portada .contenedor .portada-fila .portada-fila-img img {
+  padding: 0 90px;
+}
+html body #servicios .contenedor {
+  text-align: center;
+}
+html body #servicios .contenedor .txt-secundario {
+  padding: 10px;
+  width: 50%;
+  margin: 0% auto;
+  font-weight: 400;
+  font-size: 50px;
+  color: #00b5dc;
+  text-transform: uppercase;
+}
+html body #servicios .contenedor .large {
+  line-height: 30px;
+  padding: 10px;
+  width: 50%;
+  margin: 0% auto;
+}
+html body #servicios .contenedor .servicios-fila {
+  margin-top: 80px;
+  height: 100vh;
+  display: flex;
+}
+html body #servicios .contenedor .servicios-fila .servicios-fila-caja {
+  margin: 0 auto;
+  width: 22%;
+}
+html body #servicios .contenedor .servicios-fila .servicios-fila-caja img {
+  display: block;
+  margin: 0 auto;
+  width: 250px;
+}
+html body #servicios .contenedor .servicios-fila .servicios-fila-caja h4 {
+  width: 100%;
+  text-align: left;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+html body #servicios .contenedor .servicios-fila .servicios-fila-caja p {
+  text-align: left;
+}
+html body #contact .contenedor {
+  text-align: center;
+}
+html body #contact .contenedor .txt-secundario {
+  padding: 10px;
+  width: 50%;
+  margin: 0% auto;
+  font-weight: 400;
+  font-size: 50px;
+  color: #00b5dc;
+  text-transform: uppercase;
+}
+html body #contact .contenedor .large {
+  line-height: 30px;
+  padding: 10px;
+  width: 50%;
+  margin: 0% auto;
+}
+html body #contact .contenedor form {
+  width: 40%;
+  margin: 0 auto;
+}
+html body #contact .contenedor form .form-group {
+  text-align: start;
+  display: grid;
+}
+html body #contact .contenedor form .form-group label {
+  padding: 10px 0;
+}
+html body #contact .contenedor form .form-group .form-control {
+  padding: 10px;
+  border-radius: 30px;
+}
+html body #contact .contenedor form button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  background-color: #00b5dc;
+  font-weight: 600;
+  color: white;
+  font-size: 20px;
+  margin: 20px 0 200px 0;
+}
+html body #pie {
+  padding: 50px 0;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */

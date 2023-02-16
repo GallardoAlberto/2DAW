@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
+$dorado : #D6C886;
+$plateado : #C5CFD1;
+$negro : #000000;
+$blanco : rgb(255, 255, 255);
+$verdeClaro : #274948;
+$verdeOscuro : #1C3C3A;
+$fondoGris : #C5CFD1;
+ 
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Montserrat', sans-serif;
+    // border-style: solid;
+    // color: white;
+}
+header{
+    background-image: url("../multimedia/fondo1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-position: center;
+    height: 100vh;
+    nav{
+        width: 100%;
+        position: fixed;
+        border-top: 1px solid $dorado;
+        border-bottom: 1px solid $dorado;
+        display: flex;
+        padding: 10px;
+        background-color: $negro;
+        #logo{
+            display: none;
+        }
+        #patrocinador{
+            width: 150px;
+        }
+        img{
+            padding: 0 20px;
+            width: 100px;
+        }
+        #menu{
+            width: 100%;
+            list-style-type: none;
+            display: flex;
+            justify-content: end;
+            li{
+                padding: 40px 50px;
+            }
+            a{
+                font-size: 20px;
+                text-decoration: none;
+                color: $blanco;
+                transition: 0.4s;
+                &:hover{
+                    color: $dorado;
+                }
+            }
+        }
+    }
+}
+section{
+    .sobreNosotros{
+        display: grid;
+        grid-template-columns: 2fr 3fr;
+        article{
+            text-align: center;
+            box-shadow: 0px 0px 10px 4px $negro;
+            background-color: $verdeClaro;
+            box-sizing: border-box;
+            padding: 50px 100px;
+            h1{
+                border-bottom: 1px solid white;
+                text-transform: capitalize;
+                color: white;
+                font-size: 30px;
+                padding: 0 0 20px 0;
+            }
+            p{
+                padding: 20px;
+                color: white;
+                line-height: 25px;
+            }
+        }
+    }
+    .title{
+        text-transform: uppercase;
+        text-align: center;
+        padding:  40px;
+        font-size: 40px;
+        
+    }
+    .noticias{
+        background-color: $fondoGris;
+
+        display: grid;
+        grid-template-columns: 3fr 3fr;
+        article{
+            padding: 50px;
+            h2{
+                text-align: center;
+                border-radius: 20px;
+                padding: 30px;
+                color: $blanco;
+                background-color: $negro;
+            }
+            p{
+    
+            }
+        }h1{
+    
+        }
+        .contenedor{
+    
+        }
+    }
+
+}

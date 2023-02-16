@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Evento Reset</title>
+  </head>
+  <body>
+    <form action="ver-datos.php" id="formulario">
+      <input type="text" name="usuario" id="usuario" /><br />
+      Contraseña:<input
+        type="text"
+        name="contra"
+        id="contra"
+        size="15"
+        maxlength="30"
+      /><br />
+      <textarea
+        name="Comentarios"
+        cols="30"
+        rows="10"
+        id="comentarios"
+      ></textarea
+      ><br />
+      <button type="submit">Enviar</button>
+      <button type="reset">Borrar</button>
+    </form>
+    <div id="mensaje"></div>
+    <!-- <script>
+
+      let formulario = document.getElementById("formulario");
+      let tUsuario = document.getElementById("usuario");
+
+      formulario.addEventListener("reset", function (ev) {
+        if (!confirm("¿Realmente desea borrar los datos delformulario?")) {
+          ev.preventDefault();
+          tUsuario.focus();
+        }
+      });
+    </script> -->
+  </body>
+</html>

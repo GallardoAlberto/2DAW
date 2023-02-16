@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form action="accion.php" method="get">
+        <p>
+            <label for="name">Nombre:</label>
+            <input type="text" name="name">
+        </p>
+
+        <p>
+            <label for="password">Contraseña:</label>
+            <input type="password" name="password">
+        </p>
+
+        <p>
+            <label for="music">Servicios Música:</label>
+            <input type="checkbox" name="spotify">Spotify
+            <input type="checkbox" name="last_fm">Last FM
+            <input type="checkbox" name="itunes">Itunes
+        </p>
+
+        <div>
+            <p>
+                <label for="dispositivos">Dispositivos para escuchar música:</label>
+            </p>
+            <p>
+                <select name="disMusica">
+                    <option value="ipod">Ipod</option>
+                    <option value="radio">Radio</option>
+                    <option value="pc">ordenador</option>
+                </select>
+            </p>
+        </div>
+       
+        <div>
+            <p>
+                <label for="genero">Género:</label>
+            </p>
+            <p>
+                <input type="radio" name="sex">Femenino
+            </p>
+            <p>
+                <input type="radio" name="sex">Masculino
+            </p>
+        </div>
+
+        <div>
+            <p>
+                <label for="comments">Comentarios:</label>
+            </p>
+            <p>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+            </p>
+        </div>
+
+        <p>
+            <input type="submit" name="enviar">
+            <input type="reset" value="Borrar">
+        </p>
+        
+
+
+    </form>
+</body>
+</html>

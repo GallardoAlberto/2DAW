@@ -1,0 +1,15 @@
+<div class="container">
+    <p>Código de referencia: <b>{{reference}}</b></p>
+    <img src="{{image}}" alt="cocina">
+    <p>Descripción del producto: <br><br>{{description}}</p>
+    <p>Color :  <b>{{color}}</b></p>
+    <p>Precio : <b>{{price}} €</b></p>
+
+    
+</div>
+
+<div class="container">
+    <button (click)="goHome()">HOME</button>
+    <button (click)="goPortfolio()">PORTFOLIO</button>
+    <button (click)="goPrice(reference)">MODIFICAR PRECIO</button>
+</div>

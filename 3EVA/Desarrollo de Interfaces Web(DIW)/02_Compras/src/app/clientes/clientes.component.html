@@ -1,0 +1,30 @@
+<h3>Listado de Clientes</h3>
+<table
+  class="table table-bordered table-striped tabla"
+  style="margin-top: 40px"
+>
+  <thead>
+    <tr class="filters">
+      <th>Código Cliente</th>
+      <th>Nombre</th>
+      <th>Correo Electrónico</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>{{ cliente.codCliente }}</td>
+      <td>{{ cliente.nombre}}</td>
+      <td>
+        <a href="mailto:{{ cliente.correo }}">{{ cliente.correo }}</a>
+      </td>
+      <td>
+        <button (click)="comprobarBoton(cliente.nif_proveedor_energia)">Mostrar datos</button>
+      </td>
+
+    </tr>
+  </tbody>
+</table>
+
+<app-etiquetas *ngFor="let proveedor of proveedores" [nifProveedor]="nifProveedor" [proveedor]="proveedor"></app-etiquetas>
+
+

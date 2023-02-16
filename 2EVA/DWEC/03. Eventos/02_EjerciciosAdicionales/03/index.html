@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="pngegg.png" alt="">
+    <img src="pngegg (1).png" alt="">
+    <img src="pngegg aa2).png" alt="">
+    <img src="pngegg aa(3).png" alt="">
+    <img src="pngegg (4).png" alt="">
+
+    <script>
+        // Obtén la div donde irán las imágenes
+        const imagenesDiv = document.querySelectorAll("img");
+      
+        for (let i = 0; i < imagenesDiv.length; i++) {            
+            imagenesDiv[i].addEventListener("error", function () {
+            this.src = "error.png";
+            });
+
+            imagenesDiv[i].addEventListener('contextmenu', (event) => {
+            event.preventDefault();
+        });
+        }
+        
+      </script>
+</body>
+</html>

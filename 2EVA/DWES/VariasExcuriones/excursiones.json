@@ -1,0 +1,35 @@
+[
+    {
+      "nombreRuta": "Ruta de las montañas",
+      "precio": "500",
+      "numParticipantes": "10",
+      "completa": true,
+      "itinerario": [
+        "Monte Everest",
+        "Monte Kilimanjaro",
+        "Monte Elbrus"
+      ]
+    },
+    {
+      "nombreRuta": "Ruta del desierto",
+      "precio": "400",
+      "numParticipantes": "15",
+      "completa": false,
+      "itinerario": [
+        "Desierto del Sahara",
+        "Desierto de Gobi",
+        "Desierto de Atacama"
+      ]
+    },
+    {
+      "nombreRuta": "Ruta del océano",
+      "precio": "300",
+      "numParticipantes": "20",
+      "completa": true,
+      "itinerario": [
+        "Océano Atlántico",
+        "Océano Pacífico",
+        "Océano Índico"
+      ]
+    }
+]

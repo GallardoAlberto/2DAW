@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Crear examen</title>
+  </head>
+  <body>
+    <style>
+      .hidden {
+        display: none;
+      }
+      .borde {
+        border: 3px solid;
+        padding: 15px;
+        margin: 5px;
+        max-width: 600px;
+      }
+    </style>
+    <div id="conform">
+      <h1>Crear examen</h1>
+      <form action="#" id="formulario">
+        Pregunta:<input type="text" name="pregunta" id="pregunta" /><br /><br />
+        Respuesta:
+        <input type="text" name="respuesta" id="respuesta" /><br /><br />
+        <button type="submit" name="guardar">Guardar respuesta</button>
+      </form>
+    </div>
+    <div id="convisu" class="hidden" class="borde">
+      <h1>Examen Propuesto</h1>
+      <br /><br />
+    </div>
+    <script src="examen.js"></script>
+  </body>
+</html>

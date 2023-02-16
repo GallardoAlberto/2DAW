@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Montserrat", sans-serif;
+}
+
+header nav {
+  width: 100%;
+  position: fixed;
+  border-top: 1px solid #D6C886;
+  border-bottom: 1px solid #D6C886;
+  display: flex;
+  padding: 10px;
+  background-color: #000000;
+}
+header nav #logo {
+  display: none;
+}
+header nav #patrocinador {
+  width: 150px;
+}
+header nav img {
+  padding: 0 20px;
+  width: 100px;
+}
+header nav #menu {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+}
+header nav #menu li {
+  padding: 40px 50px;
+}
+header nav #menu a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+header nav #menu a:hover {
+  color: #D6C886;
+}
+
+section #clasificacion {
+  padding: 170px 20px 40px 20px;
+  background-color: #C5CFD1;
+}
+section #clasificacion table {
+  background-color: #1C3C3A;
+  border: 1px solid rgb(255, 255, 255);
+  margin: 0 auto;
+  border-radius: 7px;
+  box-shadow: 0px 0px 20px 2px;
+}
+section #clasificacion table tr .textoIzq {
+  text-align: left;
+}
+section #clasificacion table tr .negrita {
+  font-weight: 600;
+  color: #e7e7e7;
+}
+section #clasificacion table tr td {
+  border-radius: 7px;
+  color: #D6C886;
+  border: 1px solid rgb(255, 255, 255);
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+}
+section #clasificacion table #titulo td {
+  color: #e7e7e7;
+  background-color: #000000;
+}
+section #clasificacion table #equipo td {
+  background-color: #466e6d;
+}/*# sourceMappingURL=clasificacion.css.map */

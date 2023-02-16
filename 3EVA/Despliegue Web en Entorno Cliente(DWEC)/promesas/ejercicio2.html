@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Club Ajedrez</title>
+  </head>
+  <body>
+    <h1>Club Ajedrez</h1>
+
+    <form class="formulario">
+        <input type="text" name="socio" placeholder="Nombre del socio"/>
+    </form>
+    <script>
+
+      socios = [
+      {
+      nombre: 'Marta',
+      edad: '15',
+      nivel:'C',
+      ciudad:'Villalba'
+      },
+      {
+      nombre: 'Max',
+      edad: '32',
+      nivel:'B',
+      ciudad:'Alpedrete'
+      },
+      {
+      nombre: 'Julián',
+      edad: '9',
+      nivel:'D',
+      ciudad:'Alpedrete'
+      },
+      {
+      nombre: 'Amadeo',
+      edad: '16',
+      nivel:'A',
+      ciudad:'Villalba'
+      }]
+
+      let formulario = document.querySelector('.formulario');
+      let socio = document.querySelector('[name="socio"]');
+
+      window.addEventListener('keydown', (event) => {
+        event.preventDefault();
+        if (event.key === 'Enter') {
+            console.log(event.key);
+
+        }
+      })
+
+    </script>
+  </body>
+</html>

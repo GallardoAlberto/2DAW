@@ -1,0 +1,33 @@
+.welcome{
+    padding: 50px;
+}
+.welcome h1{
+    font-weight: 300;
+    font-size: 60px;
+    padding: 20px 0;
+}
+.welcome p{
+    line-height: 30px;
+}
+.welcome button{
+    margin-top: 20px;
+    padding: 10px;
+    transition: 0.4s;
+}
+.welcome button:hover{
+    box-shadow: 0px 0px 4px 0px white;
+    background-color: rgb(216, 45, 45);
+    color: white;
+    transform: scale(1.2);
+}
+.cocinas{
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.cocinas img{
+    height: 30vh;
+    width: 100%;
+    object-fit: cover;
+}

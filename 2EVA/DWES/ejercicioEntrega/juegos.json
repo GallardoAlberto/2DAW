@@ -1,0 +1,38 @@
+[
+    {
+        "Juego" : "Pokemo Go",
+        "categoria": "Aventura"
+    },
+    {
+        "Juego" : "Mafia III",
+        "categoria": "Acción"
+    },
+    {
+        "Juego" : "Uncharted 2",
+        "categoria": "Aventura"
+    },
+    {
+        "Juego" : "e-Football 2022-2023",
+        "categoria": "Deporte"
+    },
+    {
+        "Juego" : "Far cry 5",
+        "categoria": "Aventura"
+    },
+    {
+        "Juego" : "NBA2K23",
+        "categoria": "Deporte"
+    },
+    {
+        "Juego" : "GTAV",
+        "categoria": "Acción"
+    },
+    {
+        "Juego" : "Teken 6",
+        "categoria": "Acción"
+    },
+    {
+        "Juego" : "FIFA 23",
+        "categoria": "Deporte"
+    }
+]

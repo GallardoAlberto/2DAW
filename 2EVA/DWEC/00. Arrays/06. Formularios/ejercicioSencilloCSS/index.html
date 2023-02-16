@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="formulario" action="">
+      <label for="">Nombre</label>
+      <input type="text" /><br />
+      <label for="">Apellido</label>
+      <input type="text" /><br />
+      <button id="btn">Cambiar</button>
+      <br /><br />
+      <label>Curso: </label>
+
+      <input type="radio" class="btnCurso" name="curso" id="" value="1ºDAW"/>
+      <label for="">1ºDAW</label>
+      
+      <input type="radio" class="btnCurso" name="curso" id="" value="2ºDAW"/>
+      <label for="">2ºDAW</label>
+      
+      <input type="radio" class="btnCurso" name="curso" id="" value="1ºDAM"/>
+      <label for="">1ºDAM</label>
+      
+      <input type="radio" class="btnCurso" name="curso" id="" value="2ºDAM"/>
+      <label for="">2ºDAM</label>
+      
+    </form>
+    <script>
+            let form = document.querySelector(".formulario");
+            let campos = document.getElementsByTagName("input");
+
+            let btnMorado = document.querySelector("#btn");
+
+            for (let i = 0; i < campos.length; i++) {
+              campos[i].style.backgroundColor = "green";
+            }
+
+            cont = 0;
+            
+            btn.addEventListener("click", (event) => {
+              event.preventDefault();
+              if(cont % 2 == 0){
+                
+                for (let i = 0; i < campos.length; i++) {
+                campos[i].style.backgroundColor = "purple";
+                }
+                cont++;
+
+              }else{
+                for (let i = 0; i < campos.length; i++) {
+                campos[i].style.backgroundColor = "green";
+              }
+                cont++;
+
+              }
+              
+            });
+
+            let cursos = form.querySelectorAll('.btnCurso');
+
+            for(let curso of cursos){
+                curso.addEventListener("change",function(ev) {
+                    console.log('1');
+                campos[0].value=curso.value;
+            })};
+            
+    </script>
+  </body>
+</html>

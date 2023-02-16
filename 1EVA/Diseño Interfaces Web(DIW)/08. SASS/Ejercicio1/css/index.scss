@@ -1,0 +1,199 @@
+@import "parcial";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@mixin tamañoLetra50 {
+    font-size: 50px;
+}
+@mixin tamañoLetra30 {
+    font-size: 30px;
+}
+@mixin tamañoLetra20 {
+    font-size: 20px;
+}
+@mixin letraMayus {
+    text-transform: uppercase;
+}
+@mixin letraNormal {
+    text-transform: capitalize;
+}
+@mixin titulo {
+    padding: 10px;
+    width: 50%;
+    margin: 0% auto;
+    font-weight: 400;
+    @include tamañoLetra50();
+    color: $azulClaro;
+    @include letraMayus();
+}
+@mixin txttitulo {
+    line-height: 30px;
+    padding: 10px;
+    width: 50%;
+    margin: 0% auto;
+}
+*{
+    margin: 0%;
+    padding: 0%;
+    // border-style: solid;
+}
+
+html{
+    margin: 0 auto;
+    width: 70%;
+
+    body{
+        color : $blanco;
+        font-family: 'Montserrat', sans-serif;
+        background-color: $azulOscuro;
+
+        #inicio{
+            height: 100vh;
+            #navbar{
+
+                .contenedor{
+                    display: flex;
+                    justify-content: space-between;
+                    .logo{
+                        @include letraMayus();
+                        @include tamañoLetra30();
+                    }
+                    ul{
+                        display: flex;
+                        list-style-type: none;
+                        li{
+                            @include letraMayus();
+                            padding: 0 20px;
+                            a{
+                                text-decoration: none;
+                                color : $blanco;
+                            }
+                        }
+                    }
+                }
+            }
+            #portada{
+                .contenedor{
+                    .portada-fila{
+                        margin-top: 15%;
+                        display: flex;
+                        
+                        &-txt{
+                            .large{
+                                line-height: 30px;
+                                margin-bottom: 30px;
+                            }
+                            .mayus{
+                                @include letraMayus();
+                            }
+                            h1{
+                                padding: 20px 0;
+                                @include letraMayus();
+
+                                .txt-secundario{
+                                    color: $azulClaro;
+                                }
+                            }
+                            a{
+                                background-color: $azulClaro;
+                                border-radius: 30px;
+                                padding: 10px 20px;
+                                color: $blanco;
+                                
+                            }
+                        }
+                        .portada-fila-img{
+                           img{
+                            padding: 0 90px;
+                           }
+                        }
+                    }
+                }
+                
+            }
+
+        
+        }
+        #servicios{
+            .contenedor{
+                text-align: center;
+
+                .txt-secundario{
+                    @include titulo();
+                }
+                .large{
+                    @include txttitulo();
+
+                }
+                .servicios-fila{
+                    margin-top: 80px;
+                    height: 100vh;
+                    display: flex;
+                    .servicios-fila-caja{
+                        margin: 0 auto;
+                        width: 22%;
+                        img{
+                            display: block;
+                            margin: 0 auto;
+                            width: 250px;
+                        }
+                        h4{
+                            width: 100%;
+                            text-align: left;
+                            @include tamañoLetra20();
+                            @include letraNormal();
+                        }
+                        p{
+                            text-align: left;
+                        }
+                    }
+                }
+
+            }
+        }
+        #contact{
+            .contenedor{
+                text-align: center;
+
+                .txt-secundario{
+                    @include titulo();
+                }
+                .large{
+                    @include txttitulo();
+                }
+                form{
+                    width: 40%;
+                    margin: 0 auto;
+
+                    .form-group{
+                        text-align: start;
+                        display: grid;
+                        label{
+                            padding: 10px 0;
+                        }
+                        .form-control{
+                            padding: 10px;
+                            border-radius: 30px;
+                        }
+                    }
+                    button{
+                        width: 100%;
+                        padding: 10px;
+                        border-radius: 15px;
+                        background-color: $azulClaro;
+                        font-weight: 600;
+                        color: $blanco;
+                        @include tamañoLetra20();
+                        margin: 20px 0 200px 0;
+                    }
+                }
+            }
+        }
+        #pie{
+            padding: 50px 0;
+            text-align: center;
+            
+        }
+    
+    }
+}
+

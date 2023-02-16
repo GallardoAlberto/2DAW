@@ -1,0 +1,119 @@
+.ninguna{
+    background-color: black;
+    color: white;
+}
+.gluten{
+    background-color: orange;
+    color: white;
+}
+.vegano{
+    background-color: rgb(52, 112, 29);
+    color: white;
+
+}
+.huevo{
+    background-color: yellow;
+    color: black;
+}
+.lactosa{
+    background-color: rgb(165, 42, 236);
+    color: white;
+}
+.dieta{
+    background-color: rgb(57, 161, 104);
+    color: white;
+}
+
+/* Tabla */
+
+.container--formulario{
+    box-shadow: 0px 0px 10px 1px black;
+    border: 3px solid #F6EDE3;
+    background-color: #7B4E2F;
+    color: white;
+    width: 400px;
+    margin: 50px auto;
+    display: grid;
+    border-radius: 10px;
+    padding: 20px 0;
+    
+}
+.container--formulario label{
+    padding: 10px 40px;
+}
+.container--formulario input,select{
+    border: 1px solid none;
+    padding: 10px;
+    border-radius: 3px;
+    border-radius: 10px;
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+}
+.container--formulario button{
+    width: 100px;
+    padding: 10px;
+    background-color: #BDB3A7;
+    border: none;
+    color: white;
+    margin: 20px auto;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px black;
+}
+
+.container--intolerancia{
+    box-shadow: 0px 0px 10px 1px black;
+    border: 3px solid #F6EDE3;
+    background-color: #53443a;
+    width: 100%;
+    color: white;
+    margin: 50px auto;
+    display: grid;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.container--intolerancia select{
+    width: 200px;
+}
+.container--intolerancia button{
+    width: 100px;
+    padding: 10px;
+    background-color: #BDB3A7;
+    border: none;
+    color: white;
+    margin: 20px auto;
+    cursor: pointer;
+    font-weight: 500;
+    border-radius: 10px;
+    box-shadow: 0px 0px 5px 1px black;
+}
+.container--dieta{
+    display: grid;
+    padding: 20px 0;
+    text-align: center;
+}
+.container--dieta input{
+    width: 200px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+.container--intolerancia .container--carta--tabla{
+    width: 10%;
+    text-align: center;
+    margin: 0 auto;
+    border: 3px solid #F6EDE3;
+    border-collapse: collapse;
+}
+
+.container--intolerancia .container--carta--tabla tr,td{
+    background-color: rgb(196, 115, 10);
+    font-weight: 500;
+    padding: 20px;
+    border: 1px solid #F6EDE3;
+    color: white;
+}

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+h1{
+    text-align: center;
+    padding: 20px;
+    background-color: rgb(65, 41, 41);
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    color: white;
+}
+h2{
+    padding: 10px 20px;
+    background-color: rgb(58, 48, 68);
+    color: white;
+    border-bottom: 1px solid white;
+
+}
+div{
+    color: white;
+    padding: 20px;
+    background-color: rgb(85, 85, 84);
+    margin: 0 auto;
+    font-size: 18px;
+}
+input{
+    font-size: 15px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+button{
+    background-color: rgb(65, 41, 41);
+    color: white;
+    border-radius: 5px;
+    border: 1px solid white;
+    padding: 10px;
+    margin-left: 10px;
+}

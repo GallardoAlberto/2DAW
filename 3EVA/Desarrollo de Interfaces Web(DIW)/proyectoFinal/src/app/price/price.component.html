@@ -1,0 +1,9 @@
+<div class="container">
+    <p>Introduce un nuevo precio para el producto: <b>{{reference}}</b></p>
+    <input type="text" [(ngModel)]="price">
+    <button (click)="changePrice(reference)">Cambiar</button>
+</div>
+
+<div class="container">
+    <button routerLink="/portfolio">Cerrar</button>
+</div>

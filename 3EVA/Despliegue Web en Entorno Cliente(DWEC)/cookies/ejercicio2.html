@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Mi lista de la compra</h1>
+
+  <div>
+    <input type="text" id="campo" />
+    <button id="btnAñadir">Añadir a la lista</button>
+  </div>
+
+  <ul class="lista"></ul>
+
+  <p>
+    <i>Nota: Puedes eliminar elementos de la lista haciendo doble click sobre
+      ellos</i>
+  </p>
+  <button id="btnReset">Resetear la lista y borrarla de la memoria</button>
+
+  <script>
+    let campo = document.getElementById("campo");
+    let btnAñadir = document.querySelector("#btnAñadir");
+    let btnReset = document.querySelector("#btnReset");
+    let lista = document.querySelector(".lista");
+
+    let arrayAlimentos = [];
+
+    // Obtenga el valor de la cookie al cargar la página
+    window.onload = function () {
+      let cookies = document.cookie.split(";");
+
+      // Recorra las cookies y agregue su valor al array y a la lista
+      for (let i = 0; i < cookies.length; i++) {
+        let cookie = cookies[i];
+        let igualPos = cookie.indexOf("=");
+        let nombre = cookie.substring(0, igualPos);
+        let valor = cookie.substring(igualPos + 1, cookie.length);
+
+        if (nombre.trim() != "") {
+          arrayAlimentos.push(valor);
+          let p = document.createElement("p");
+          p.innerHTML = `
+                  <li>${valor}</li>
+              `;
+          lista.appendChild(p);
+        }
+      }
+
+      let liArray = document.querySelectorAll("li");
+
+      liArray.forEach((li) => {
+        li.addEventListener("dblclick", (event) => {
+          event.target.remove();
+          let index = arrayAlimentos.indexOf(event.target.textContent);
+          arrayAlimentos.splice(index, 1);
+
+          let fecha = new Date();
+          fecha.setTime(fecha.getTime() - 24 * 60 * 60 * 1000);
+          let expires = "expires=" + fecha.toUTCString();
+          document.cookie = `${event.target.textContent}=; ${expires}; path=/`;
+        });
+      });
+
+      liArray.forEach((li) => {
+        btnReset.addEventListener("click", () => {
+          li.remove();
+          arrayAlimentos.length = 0;
+          document.cookie = "";
+        });
+      });
+    };
+
+    btnAñadir.addEventListener("click", () => {
+      let p = document.createElement("p");
+
+      arrayAlimentos.push(campo.value);
+      console.table(arrayAlimentos);
+
+      p.innerHTML = `
+                <li>${campo.value}</li>
+            `;
+
+      var fecha = new Date();
+      fecha.setTime(fecha.getTime() + 365 * 24 * 60 * 60 * 1000);
+      var expires = "expires=" + fecha.toUTCString();
+      document.cookie = `${campo.value}=${campo.value}; ${expires}; path=/`;
+
+      lista.appendChild(p);
+      console.log(document.cookie);
+
+      let liArray = document.querySelectorAll("li");
+
+      liArray.forEach((li) => {
+        li.addEventListener("dblclick", (event) => {
+          event.target.remove();
+          let index = arrayAlimentos.indexOf(event.target.innerText);
+          if (index > -1) {
+            arrayAlimentos.splice(index, 1);
+          }
+          document.cookie = `${event.target.innerText}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+          console.table(arrayAlimentos);
+          console.log(document.cookie);
+        });
+      });
+
+      liArray.forEach((li) => {
+        btnReset.addEventListener("click", () => {
+          li.remove();
+          arrayAlimentos.length = 0;
+          document.cookie = arrayAlimentos;
+          console.table(arrayAlimentos);
+          console.log(document.cookie);
+        });
+      });
+      campo.value="";
+
+      function getCookie(nombreCookie) {
+      // Establece una constante llamada "valor" que contiene todas las cookies de la página web
+      const valor = "; " + document.cookie;
+      // Divide "valor" en varios fragmentos basados en "; " + nombreCookie + "=" y los guarda en la constante "partes"
+      const partes = valor.split("; " + nombreCookie + "=");
+      // Si la longitud de "partes" es igual a 2, significa que la cookie existe
+      if (partes.length == 2)
+        // Devuelve el valor de la cookie usando "pop()" y "shift()" en el fragmento correspondiente
+        return partes.pop().split(";").shift();
+    }
+    
+    });
+  </script>
+</body>
+
+</html>

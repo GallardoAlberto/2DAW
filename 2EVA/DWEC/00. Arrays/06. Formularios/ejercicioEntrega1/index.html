@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form class="formulario" action="">
+      <p>
+        El botón reiniciar, pide configuración antes de borrar el formulario
+        <br />
+        Todos los datos son obligatorios y no se envía el formulario si falta
+        algún dato o hay algún error
+      </p>
+      <p>
+        <label>DNI:</label>
+        <input type="text" />
+      </p>
+      <p>
+        <label>Nombre:</label>
+        <input type="text" />
+      </p>
+      <p>
+        <label>Edad:</label>
+        <input type="date"/>
+      </p>
+      <p>
+        <label>Número de hijos:</label>
+        <input type="number"/>
+      </p>
+      <p>
+        <label>Email:</label>
+        <input type="email" />
+      </p>
+      <p>
+        <label>Página WEB:</label>
+        <input type="text" />
+      </p>
+      <p>
+        <label>DNI:</label>
+        <input type="password" />
+      </p>
+      <input class="boton--reiniciar" type="reset" value="Reiniciar" />
+      <input class="boton--enviar" type="submit" value="Enviar" />
+    </form>
+
+    <script>
+              let formulario = document.querySelector('.formulario');
+              let btnReiniciar = formulario.querySelector('.boton--reiniciar');
+              let btnEnviar = formulario.querySelector(".boton--enviar");
+
+              let inputs = formulario.getElementsByTagName('input');
+              let dni = inputs[0];
+              let nombre = inputs[1];
+              let edad = inputs[2];
+              let hijos = inputs[3];
+
+              let regexDni = /[A-Z]{2}\d{7}\d/;
+              let regexHijos = /[0-9|10]/
+
+              btnEnviar.addEventListener('click',(ev)=>{
+                ev.preventDefault();
+                if(regexHijos.test()){
+                    console.log("Número de hijos válidos");
+                }else{
+                    console.log("Número de hijos no válido");
+
+                }
+              })
+
+
+            
+    </script>
+  </body>
+</html>

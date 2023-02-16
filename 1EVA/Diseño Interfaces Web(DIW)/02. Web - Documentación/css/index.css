@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap");
+* {
+  padding: 0%;
+  margin: 0%;
+  font-family: "Montserrat", sans-serif;
+}
+
+header {
+  background-image: url("../multimedia/fondo1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+}
+header nav {
+  width: 100%;
+  position: fixed;
+  border-top: 1px solid #D6C886;
+  border-bottom: 1px solid #D6C886;
+  display: flex;
+  padding: 10px;
+  background-color: #000000;
+}
+header nav #logo {
+  display: none;
+}
+header nav #patrocinador {
+  width: 150px;
+}
+header nav img {
+  padding: 0 20px;
+  width: 100px;
+}
+header nav #menu {
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  justify-content: end;
+}
+header nav #menu li {
+  padding: 40px 50px;
+}
+header nav #menu a {
+  font-size: 20px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+header nav #menu a:hover {
+  color: #D6C886;
+}
+
+section .sobreNosotros {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+section .sobreNosotros article {
+  text-align: center;
+  box-shadow: 0px 0px 10px 4px #000000;
+  background-color: #274948;
+  box-sizing: border-box;
+  padding: 50px 100px;
+}
+section .sobreNosotros article h1 {
+  border-bottom: 1px solid white;
+  text-transform: capitalize;
+  color: white;
+  font-size: 30px;
+  padding: 0 0 20px 0;
+}
+section .sobreNosotros article p {
+  padding: 20px;
+  color: white;
+  line-height: 25px;
+}
+section .title {
+  text-transform: uppercase;
+  text-align: center;
+  padding: 40px;
+  font-size: 40px;
+}
+section .noticias {
+  background-color: #C5CFD1;
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+}
+section .noticias article {
+  padding: 50px;
+}
+section .noticias article h2 {
+  text-align: center;
+  border-radius: 20px;
+  padding: 30px;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+}/*# sourceMappingURL=index.css.map */

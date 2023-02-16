@@ -1,0 +1,59 @@
+<html>
+
+<head>
+  <title>Contador de visitas</title>
+</head>
+
+<body>
+  <p id="count" style="display: none;"></p>
+
+  <script>
+    // Selecciona el elemento con id "count"
+    const count = document.querySelector("#count");
+
+    // Pregunta al usuario si desea permitir el uso de cookies
+    if (confirm("¿Desea permitir el uso de cookies para contar sus visitas en este sitio?")) {
+      // Si el usuario confirma, obtiene el número de visitas actual o establece 0 si no hay una cookie establecida
+      let visits = parseInt(getCookie("visits")) || 0;
+      // Aumenta en 1 el número de visitas
+      visits++;
+      // Establece una cookie con el nuevo número de visitas y la fecha de caducidad en 365 días
+      setCookie("visits", visits, 365);
+      // Muestra el elemento "count" y establece su contenido HTML como "Número de visitas: " + visits
+      count.style.display = "block";
+      count.innerHTML = "Número de visitas: " + visits;
+    } else {
+      // Si el usuario no confirma, establece una cookie con nombre "visits" y fecha de caducidad en -1 días
+      setCookie("visits", "", -1);
+    }
+
+    // Esta función se utiliza para obtener el valor de una cookie en una página web
+    function getCookie(nombreCookie) {
+      // Establece una constante llamada "valor" que contiene todas las cookies de la página web
+      const valor = "; " + document.cookie;
+      // Divide "valor" en varios fragmentos basados en "; " + nombreCookie + "=" y los guarda en la constante "partes"
+      const partes = valor.split("; " + nombreCookie + "=");
+      // Si la longitud de "partes" es igual a 2, significa que la cookie existe
+      if (partes.length == 2)
+        // Devuelve el valor de la cookie usando "pop()" y "shift()" en el fragmento correspondiente
+        return partes.pop().split(";").shift();
+    }
+
+    // Esta función se utiliza para establecer una cookie en una página web
+    function setCookie(name, value, days) {
+      // Crea una nueva fecha
+      const date = new Date();
+      // Establece la fecha actual más el número de días especificados
+      date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+      
+      // Crea una nueva cookie con el nombre y valor especificados, y la fecha de caducidad establecida en "date"
+      document.cookie = name + "=" + value + "; expires=" + date.toUTCString() + "; path=/";
+      alert(date.toUTCString());
+    }
+
+  </script>
+</body>
+
+</html>
+
+</html>

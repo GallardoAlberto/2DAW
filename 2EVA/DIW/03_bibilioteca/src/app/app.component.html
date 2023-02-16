@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="todos">
+    <button (click)="ocultar(lista1 = true)" *ngIf="noMostrar == false">TODOS</button><br>
+
+    <div *ngIf="lista1 == true">
+
+      <button (click)="mostrarBotones()">OCULTAR</button>
+  
+      <table>
+        <tr *ngFor="let libro of libros">
+          <td>{{libro.codigo}}</td>
+          <td>{{libro.titulo}}</td>
+          <td>{{libro.autor}}</td>
+          <td>{{libro.editorial}}</td>
+          <td [ngClass]="{ leido : libro.leido == true, noLeido : libro.leido == false}"></td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+  <div class="leidos">
+
+    <button (click)="ocultar(lista2 = true)" *ngIf="noMostrar == false;">LEIDOS</button>
+  
+    <div *ngIf="lista2 == true">
+  
+      <button (click)="mostrarBotones()">OCULTAR</button>
+  
+      <table *ngFor="let libro of libros">
+        <tr *ngIf="libro.leido == true">
+          <td>{{libro.codigo}}</td>
+          <td>{{libro.titulo}}</td>
+          <td>{{libro.autor}}</td>
+          <td>{{libro.editorial}}</td>
+          <td [ngClass]="{ leido : libro.leido == true}"></td>
+        </tr>
+  
+      </table>
+    </div>
+    
+  </div>
+
+
+</div>

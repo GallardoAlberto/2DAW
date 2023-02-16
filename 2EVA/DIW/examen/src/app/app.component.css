@@ -1,0 +1,52 @@
+.container{
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 20px;
+    height: 100vh;
+}
+.container h1,p{
+    padding: 20px;
+}
+.container input{
+    padding: 7px;
+}
+.errorRojo{
+    color: red;
+    text-transform: uppercase;
+}
+
+.containerInicio{
+    display: flex;
+}
+.containerInicio div{
+    width: 50%;
+    height: 100vh;
+}
+
+.container--izq div{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+}
+
+.container--der div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container--izq div{
+    width: 100%;
+}
+.container--der div{
+    width: 100%;
+}
+.container--izq div p{
+    padding: 20px;
+}

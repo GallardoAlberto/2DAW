@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      video {
+        height: 50vh;
+      }
+      .progreso{
+        appearance: none;
+        border-radius: 3px;
+        /* background-color: rgb(245, 245, 245); */
+      }
+      .volumen{
+        appearance: none;
+        height: 5px;
+        background-color: rgb(214, 214, 214);
+      }
+      input[type="range"].volumen::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 15px;
+        height: 5px;
+        background-color: #000000;
+        border-radius: 50%;
+        cursor: pointer;
+        }   
+        /* input[type="range"].progreso::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        background-color: #000000;
+        border-radius: 50%;
+        cursor: pointer;
+        }  */
+
+    </style>
+  </head>
+  <body>
+    <body>
+      <video class="video">
+        <source src="video1.mp4" type="video/mp4" />
+      </video>
+
+      <div>
+        <button class="iniciar">Iniciar</button>
+        <button class="pausa">Pausa</button>
+        <button class="parar">Parar</button>
+        <button class="avanzar">Avanzar</button>
+        <button class="retroceder">Retroceder</button>
+        <button class="inicio">Inicio</button>
+        <button class="fin">Fin</button>
+        <button class="pantallacompleta">Pantalla completa</button>
+        <input
+          type="range"
+          class="volumen"
+          min="0"
+          max="1"
+          step="0.1"
+          value="1"
+        />
+        <input type="range" class="progreso" value="0" />
+      </div>
+
+      <script>
+        const arrayVideos = ["video2.mp4", "video3.mp4"];
+        let video = document.querySelector(".video");
+
+        let iniciar = document.querySelector(".iniciar");
+        let pausa = document.querySelector(".pausa");
+        let parar = document.querySelector(".parar");
+        let avanzar = document.querySelector(".avanzar");
+        let retroceder = document.querySelector(".retroceder");
+        let inicio = document.querySelector(".inicio");
+        let fin = document.querySelector(".fin");
+
+        iniciar.addEventListener("click", () => {
+          video.play();
+        });
+
+        pausa.addEventListener("click", () => {
+          video.pause();
+        });
+
+        parar.addEventListener("click", () => {
+          video.pause();
+          video.currentTime = 0;
+        });
+
+        avanzar.addEventListener("click", () => {
+          video.currentTime += 10;
+        });
+
+        retroceder.addEventListener("click", () => {
+          video.currentTime -= 10;
+        });
+
+        inicio.addEventListener("click", () => {
+          video.currentTime = 0;
+        });
+
+        fin.addEventListener("click", () => {
+          video.currentTime = video.duration;
+        });
+
+        let pantallacompleta = document.querySelector(".pantallacompleta");
+
+        pantallacompleta.addEventListener("click", () => {
+          video.requestFullscreen();
+        });
+
+        video.addEventListener("ended", () => {
+          let randomVideo =
+            arrayVideos[Math.floor(Math.random() * arrayVideos.length)];
+          video.src = randomVideo;
+          video.play();
+        });
+
+        const progreso = document.querySelector(".progreso");
+
+        progreso.addEventListener("change", (e) => {
+          video.currentTime = e.target.value;
+        });
+
+        video.addEventListener("timeupdate", (e) => {
+          progreso.value = video.currentTime;
+          progreso.style.background = "linear-gradient(to right, blue " + video.currentTime + "%, rgb(245,245,245) 0%";
+        });
+
+        let volumen = document.querySelector(".volumen");
+
+        volumen.addEventListener("input", () => {
+          video.volume = volumen.value;
+        });
+      </script>
+    </body>
+  </body>
+</html>

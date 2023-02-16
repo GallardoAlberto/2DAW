@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap');
+        *{
+            font-family: 'Montserrat', sans-serif;
+            padding: 0%;
+            margin: 0%;
+        }
+        body{
+            background-attachment: fixed;
+            background-image: url("fondo.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: right;
+        }
+        h1{
+            text-align: center;
+            padding: 20px;
+        }
+        .formulario{
+            display: grid;
+            place-items: center;
+            padding: 50px;
+        }
+        .formulario select{
+            margin: 20px;
+            padding: 5px;
+        }
+        .detalle{
+            border-radius: 7px;
+            background-color: rgb(236, 236, 236);
+            text-align: center;
+            box-shadow: 0px 0px 4px rgba(0,0,0);
+        }
+        .detalle p{
+            padding: 5px 0;
+        }
+        .detalle img{
+            margin: 20px;
+            width: 150px;
+            border-radius: 200px;
+        }
+        .btnComprar{
+            color: white;
+            background-color: rgb(0, 0, 0);
+            margin: 20px;
+            padding: 5px;
+            transition: 0.3s;
+        }
+        .btnComprar:hover{
+            background-color: rgb(212, 35, 35);
+        }
+        .btnTramitar{
+            padding: 5px;
+            background-color: black;
+            color: white;
+            transition: 0.3s;
+        }
+        .btnTramitar:hover{
+            background-color: rgb(212, 35, 35);
+        }
+        .carrito{
+            padding: 50px;
+            display: grid;
+            place-items: center;
+        }
+        i{
+            box-shadow: 0px 0px 4px rgba(0,0,0);
+            color: white;
+            border-radius: 100px;
+            margin: 30px;
+            padding: 20px;
+            font-size: 50px;
+            text-align: center;
+        }
+        .carrito p{
+            box-shadow: 0px 0px 4px rgba(0,0,0);
+            background-color: rgb(57, 66, 66);
+            color: white;
+            border-radius: 7px;
+            margin: 5px 0;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>ParaguasMil</h1>
+    <div class="formulario">
+        <select id="lista">
+            <option>Elige una opción</option>
+        </select>
+        <div class="detalle"></div>
+        <button class="btnComprar">Comprar</button>
+    </div>
+
+    <footer class="carrito">
+        <!-- En el pie de la página, tendremos un recuadro con el título “Carrito”. -->
+
+        <i class="fa-sharp fa-solid fa-cart-shopping"></i>
+
+        <button class="btnTramitar" disabled>Tramitar pedido</button>
+
+        <footer class="carrito"></footer>
+    <script>
+
+        // Utilizaremos un array de productos para almacenar los diferentes artículos.La estructura de
+        // cada elemento del array se conformará de referencia, título, enlace foto y precio.
+
+        const productos = [
+            {
+                referencia: "PROD001",
+                titulo: "Paraguas Azul",
+                imagen: "img1.jpg",
+                precio: 9.99
+            },
+            {
+                referencia: "PROD002",
+                titulo: "Paraguas Rojo",
+                imagen: "img2.jpg",
+                precio: 19.99
+            }
+            // ...
+        ];
+
+        // Se desea que la página visualice inicialmente una lista desplegable en la que aparece en
+        // cada elemento de la lista el título, y el precio de cada artículo
+
+        const lista = document.querySelector("#lista");
+
+        productos.forEach(product => {
+            const option = document.createElement("option");
+            option.text = `${product.titulo} - ${product.precio}€`;
+            lista.add(option);
+        });
+
+        // Al hacer clic en algún artículo de la lista, se mostrará en una caja, todos los datos del
+        // artículo en cuestión.
+
+        const detalle = document.querySelector('.detalle');
+        const carrito = document.querySelector('.carrito');
+        const btnComprar = document.querySelector('.btnComprar');
+        let arrayCarro = [];
+        let selectedProduct;
+        let btnTramitar = document.querySelector('.btnTramitar');
+
+        lista.addEventListener('change', (event) => {
+            selectedProduct = productos.find(p => p.titulo === event.target.value.split(" - ")[0]);
+
+            if (selectedProduct) {
+                detalle.innerHTML = `
+                    <p>Código de referencia: ${selectedProduct.referencia}</p>
+                    <p>Nombre: ${selectedProduct.titulo}</p>
+                    <p>Precio: ${selectedProduct.precio}</p>
+                    <img src="${selectedProduct.imagen}"></img>
+                `
+            }
+
+            detalle.style.padding = '20px';
+        });
+
+        let p1 = document.createElement("p");
+        let anterior = "";
+
+        btnComprar.addEventListener('click', () => {
+
+            let p1 = document.createElement("p");
+
+            if (selectedProduct) {
+
+                arrayCarro.push({ "titulo": selectedProduct.titulo, "precio": selectedProduct.precio });
+                console.table(arrayCarro);
+                p1.innerHTML = `${selectedProduct.titulo} - ${selectedProduct.precio}€ <br>`;
+                carrito.appendChild(p1);
+
+                // Al hacer doble clic en algún artículo del carrito, desaparece del carrito.
+
+                p1.addEventListener('dblclick', (event) => {
+                    let parrafos = Array.from(carrito.querySelectorAll('p'));
+                    let indice = parrafos.indexOf(event.target);
+                    console.log(indice);
+
+                    event.target.remove();
+                    parrafos.splice(indice, 1);
+                    arrayCarro.splice(indice, 1);
+                })
+            }
+
+            if (arrayCarro.length > 0) {
+                btnTramitar.removeAttribute("disabled");
+            }
+
+        });
+
+        // Al hacer clic en “Tramitar pedido” se muestra la suma de los precios.
+
+        btnTramitar.addEventListener('click', () => {
+            let total = 0;
+            arrayCarro.forEach(elemento => {
+                total = total + elemento.precio;
+            });
+
+            // Si la suma es mayor que 120€, se aplica un descuento del 5% y se muestra el nuevo
+            // importe de la compra, debajo del total sin descuento. (Resolver con una promesa).
+
+
+            let promesa = new Promise((resolve, reject) => {
+                    if (total.toFixed(2) > 120){
+                        resolve("Tiene descuento");
+                    } else {
+                        reject(`No tiene descuento.`);
+                    }
+                });
+
+            promesa
+            .then(conDescuento => {
+                console.log("Tiene descuento");
+                confirm("¿Estas seguro de realizar la compra? TOTAL: " +(total * 0.95).toFixed(2)+ "€");
+            })
+            .catch(sinDescuento => {
+                console.log("No tiene descuento");
+                confirm("¿Estas seguro de realizar la compra? TOTAL: " +(total).toFixed(2)+ "€");
+            });
+        })
+
+    </script>
+<script src="https://kit.fontawesome.com/c98f52caa2.js" crossorigin="anonymous"></script>
+
+
+</body></html>

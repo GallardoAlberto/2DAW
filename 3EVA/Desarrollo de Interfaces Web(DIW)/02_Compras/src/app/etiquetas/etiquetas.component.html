@@ -1,0 +1,24 @@
+<div class="container" *ngIf="cifProveedor == proveedor.cif">
+    <h2>DATOS PROVEEDOR</h2>
+    <p>{{proveedor.cif}}</p>
+    <p>{{proveedor.nombre}}</p>
+    <p>{{proveedor.direccion}}</p>
+    <p>{{proveedor.cp}}</p>
+    <p>{{proveedor.localidad}}</p>
+</div>
+
+<div class="container" *ngIf="nifProveedor == proveedor.cif">
+    <p>{{proveedor.nombre}}</p>
+    <p>{{proveedor.cif}}</p>
+    <p>{{proveedor.telefono}}</p>
+    <button (click)="comprobarBoton(proveedor.cif)" *ngIf="click == false">Más...</button>
+    <ng-container *ngIf="comprobar == proveedor.cif">
+        <p>{{proveedor.direccion}}</p>
+        <p>{{proveedor.cp}}</p>
+        <p>{{proveedor.localidad}}</p>
+        <p>{{proveedor.provincia}}</p>
+        <p>{{proveedor.emai}}</p>
+        <p>{{proveedor.contacto}}</p>
+    </ng-container>
+    
+</div>

@@ -1,0 +1,24 @@
+<p>Nota: {{nota}} </p>
+<p *ngIf="nota > 4; else suspenso" [ngClass]=" { aprobado : aprobado == 'Has aprobado' }">{{aprobado}}</p>
+<ng-template #suspenso>
+  <p [ngClass]=" { suspen }">{{suspen}}</p>
+</ng-template>
+<p *ngIf="nota <= 4">
+  Insuficiente
+</p>
+<p *ngIf="nota == 5">
+  Suficiente
+</p>
+<p *ngIf="nota == 6">
+  Bien
+</p>
+<p *ngIf="nota == 7 || nota == 8">
+  Notable
+</p>
+<p *ngIf="nota == 9 || nota == 10">
+  Sobresaliente
+</p>
+
+<label>Nota: </label>
+<button (click)="mas1()">+</button>
+<button (click)="menos1()">-</button>

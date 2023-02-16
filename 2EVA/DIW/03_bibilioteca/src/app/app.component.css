@@ -1,0 +1,9 @@
+table td{
+    padding: 20px;
+}
+.leido{
+    background-color: green;
+}
+.noLeido{
+    background-color: black;
+}

@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="datos">
+    <h1><i>Alta de empleados</i></h1>
+    <br /><br /><br /><br />
+    <div>
+      <p>Nombre:</p>
+      <input type="text" placeholder="nombre" #nombre />
+
+      <p>Apellido:</p>
+      <input type="text" placeholder="apellido" #apellido />
+
+      <p>Cargo:</p>
+      <input type="text" placeholder="cargo" #cargo />
+
+      <p>Salario:</p>
+      <input type="number" placeholder="0" #salario />
+    </div>
+    <input
+      class="agregar"
+      type="submit"
+      value="Agregar"
+      (click)="
+        crearEmpleado(nombre.value, apellido.value, cargo.value, salario.value)
+      "
+    />
+  </div>
+</div>
+
+<div class="container">
+  <div class="datos--empleado">
+    <h1>Lista de empleados en hijo</h1>
+    <div class="empleados" *ngFor="let empleado of empleados; let i = index">
+      <app-componente-hijo [empleado]="empleado" [i]="i"></app-componente-hijo>
+    </div>
+  </div>
+  
+</div>

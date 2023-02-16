@@ -1,0 +1,68 @@
+<div class="container" *ngIf="mostrar == false">
+  <h1>Selección de personal</h1>
+  <p>
+    {{usuario}}
+    <input type="text" placeholder="Usuario" #user>
+  </p>
+  <p>
+    {{contrasenia}}
+    <input type="password" placeholder="Contraseña" #pass>
+  </p>
+  <input type="button" value="Empezar" (click)="comprobar(user.value, pass.value)" (click)="contC()">
+
+  <ng-container *ngIf="comprobar(user.value, pass.value) == true">
+
+  </ng-container>
+
+  <ng-container *ngIf="contClick != 0">
+    <p [ngClass]="{ errorRojo : comprobar(user.value, pass.value) == false }">{{mensaje}}</p>
+  </ng-container>
+  
+</div>
+
+<div class="containerInicio" *ngIf="mostrar == true">
+  <div class="container--izq">
+    <div>
+      <h2>Datos de los candidatos</h2>
+      <ng-container *ngFor="let candidato of candidatos;">
+        <p *ngIf="contadorCandidatos() == candidato.codCandidato">
+          Código de candidato: {{candidato.codCandidato}} <br>
+          Nombre: {{candidato.nombre}} <br>
+          Télefono: {{candidato.telefono}} <br>
+          Edad: {{candidato.edad}} <br>
+          Especialidad: {{candidato.especialidad}} <br>
+          Código del nivel de estudios: {{candidato.codNivel}}
+          <input type="checkbox" [(ngModel)]="isChecked"><br>
+          Experiencia:  {{candidato.experiencia}} meses.
+          <br>
+          <input type="button" value="Anterior" (click)="anterior()" [ngStyle]="{padding: '7px'}">
+          <input type="button" value="Siguiente" (click)="siguiente()" [ngStyle]="{padding: '7px'}">
+        </p>
+      </ng-container>
+    </div>
+  </div>
+  <div class="container--der" *ngIf="isChecked == true">
+    <div>
+      <select #filtro>
+        <option value="nombre">Nombre</option>
+        <option value="tel">Teléfono</option>
+        <option value="antiguo">Antigüedad</option>
+      </select>
+  
+      <input type="button" (click)="obtenerF(filtro.value)">
+      <ng-container *ngFor="let candidato of candidatos;">
+        <p>
+          Nombre: {{candidato.nombre}} <br>
+          Télefono: {{candidato.telefono}} <br>
+          Experiencia:  {{candidato.experiencia}} meses.
+        </p>
+      </ng-container>
+    </div>
+  
+  </div>
+</div>
+
+
+
+
+

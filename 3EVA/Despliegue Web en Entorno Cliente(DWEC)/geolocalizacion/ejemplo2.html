@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Geolocalización</title>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      var capa = document.querySelector("div");
+      navigator.geolocation.getCurrentPosition((pos) => {
+        capa.textContent = `Latitud: ${pos.coords.latitude}, ` +
+          `Longitud: ${pos.coords.longitude} `;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,4 @@
+<app-hijo *ngFor="let alimento of alimentos" [alimento]="alimento" (alimentoSeleccionado)="articuloSeleccionado($event)"></app-hijo>
+
+<h2 *ngIf="check == true">{{nombreAlimento}} &check;</h2>
+<h2 *ngIf="check == false">{{nombreAlimento}} &times;</h2>

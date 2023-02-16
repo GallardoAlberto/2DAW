@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>examen</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,300&display=swap");
+      * {
+        font-family: "Montserrat", sans-serif;
+        padding: 0%;
+        margin: 0;
+        /* border-style: solid; */
+      }
+      body {
+        background-image: url('fondo.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      h1 {
+        background-color: black;
+        color: white;
+        text-align: center;
+        padding: 50px;
+      }
+      .padre{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+      }
+      li {
+        text-align: center;
+        border-radius: 10px;
+        background-color: rgb(236, 236, 236);
+        list-style: none;
+        font-weight: bolder;
+        font-size: 20px;
+        transition: 0.4s;
+        padding: 20px;
+        margin: 50px;
+      }
+      li:hover {
+        background-color: rgb(218, 143, 143);
+        box-shadow: 0px 0px 7px 1px black;
+
+      }
+      li p {
+        text-align: start;
+        font-size: 16px;
+        font-weight: none;
+      }
+      .plantas div {
+        padding: 20px;
+        box-sizing: border-box;
+        margin: 0 auto;
+      }
+      .plantas div1 {
+        width: 200px;
+      }
+      .plantas div p {
+        padding: 5px;
+      }
+      .colorAzul {
+        background-color: blue !important;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+
+      }
+
+      .colorGris {
+        background-color: gray !important;
+        color: white;
+        border-radius: 10px;
+        border: 1px solid black;
+      }
+      img {
+        border-radius: 400px;
+        width: 200px;
+      }
+      .boton {
+        margin: 50px 0;
+        display: grid;
+        place-items: center;
+      }
+      .boton input {
+        padding: 10px;
+        background-color: rgb(56, 56, 56);
+        color: white;
+        border-radius: 5px;
+        transition: 0.3s;
+      }
+      .boton input:hover {
+        background-color: brown;
+        box-shadow: 0px 0px 7px 1px black;
+      }
+      input:disabled {
+        background-color: rgb(94, 94, 94);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Información plantas</h1>
+
+    <div class="plantas"></div>
+
+    <div class="boton">
+      <input type="button" name="finalizar" value="Finalizar" />
+    </div>
+
+    <script>
+      // ejercicio 2 y 3
+
+      let plantas = [
+        {
+          Nombre: "Palmera",
+          solDirecto: true,
+          regadoAbundante: true,
+          bajasTemperaturas: false,
+          Foto: "palmera.jpg",
+        },
+        {
+          Nombre: "Geranio",
+          solDirecto: true,
+          regadoAbundante: false,
+          bajasTemperaturas: false,
+          Foto: "geranio.jpg",
+        },
+        {
+          Nombre: "Amapola",
+          solDirecto: true,
+          regadoAbundante: true,
+          bajasTemperaturas: true,
+          Foto: "amapola.jpg",
+        },
+      ];
+
+      let cajaPlantas = document.querySelector(".plantas");
+      let ul = document.createElement("ul");
+
+      cajaPlantas.appendChild(ul);
+
+      plantas.forEach((planta) => {
+        let li = document.createElement("li");
+        let contenido = document.createTextNode(planta.Nombre);
+        li.appendChild(contenido);
+        ul.appendChild(li);
+      });
+
+      let etiquetasLi = document.querySelectorAll("li");
+
+      let contadorConsultas = 0;
+
+      etiquetasLi.forEach((etiquetasLi) => {
+        etiquetasLi.addEventListener("click", (ev) => {
+            etiquetasLi.style.textAlign = 'start';
+          if (ev.target) {
+            let divPadre = document.createElement("div");
+            divPadre.classList.add('padre');
+
+            let div = document.createElement("div");
+            let div1 = document.createElement("div");
+
+            for (let i = 0; i < plantas.length; i++) {
+              if (plantas[i].Nombre == etiquetasLi.innerHTML) {
+                let p = document.createElement("p");
+                let contenidoNombre = document.createTextNode(
+                  "Nombre: " + plantas[i].Nombre
+                );
+                p.appendChild(contenidoNombre);
+
+                let p1 = document.createElement("p");
+                if (plantas[i].solDirecto == true){
+                    let contenidoSolDirecto = document.createTextNode(
+                  "Admite sol directo: Si"
+                );
+                p1.appendChild(contenidoSolDirecto);
+
+                }else{
+                    let contenidoSolDirecto = document.createTextNode(
+                  "Admite sol directo: No"
+                );
+                p1.appendChild(contenidoSolDirecto);
+
+                }
+                
+                let p2 = document.createElement("p");
+                if(plantas[i].regadoAbundante == true){
+                    let contenidoRiego = document.createTextNode(
+                  "Necesita riego abundante: Si"
+                );
+                p2.appendChild(contenidoRiego);
+
+                }else{
+                    let contenidoRiego = document.createTextNode(
+                  "Necesita riego abundante: No"
+                );
+                p2.appendChild(contenidoRiego);
+
+                }
+                
+
+                let p3 = document.createElement("p");
+                if(plantas[i].bajasTemperaturas == true){
+                let contenidoAgueante = document.createTextNode(
+                  "Aguanta heladas: Si"
+                );
+                p3.appendChild(contenidoAgueante);
+
+                }else{
+                    let contenidoAgueante = document.createTextNode(
+                  "Aguanta heladas: No"
+                );
+                p3.appendChild(contenidoAgueante);
+
+                }
+
+                let img = document.createElement("img");
+                let url = plantas[i].Foto;
+                img.src = url;
+
+                etiquetasLi.appendChild(divPadre);
+                divPadre.appendChild(div);
+                divPadre.appendChild(div1);
+                div.appendChild(p);
+                div.appendChild(p1);
+                div.appendChild(p2);
+                div.appendChild(p3);
+                div1.appendChild(img);
+
+                img.addEventListener("dblclick", () => {
+                  if (plantas[i].regadoAbundante == true) {
+                    divPadre.classList.add("colorAzul");
+                  } else {
+                    divPadre.classList.add("colorGris");
+                  }
+                });
+
+                etiquetasLi.removeEventListener("click", etiquetasLi);
+                contadorConsultas++;
+              }
+            }
+          }
+        });
+      });
+
+      //   Ejercicio 4
+
+      function mostrarAlert() {
+        if (contadorConsultas != 0) {
+          alert("Número de plantas consultadas: " + contadorConsultas);
+        } else {
+          alert("Todavía no has consultado nada");
+        }
+        botonFinalizar.classList.remove("disabled");
+      }
+
+      let botonFinalizar = document.querySelector('[name="finalizar"]');
+
+      botonFinalizar.addEventListener("click", (event) => {
+        event.preventDefault();
+
+        botonFinalizar.classList.add("disabled");
+
+        mostrarAlert();
+      });
+    </script>
+  </body>
+</html>

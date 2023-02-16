@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>NGIF ejemplo</h1>
+  <label>Nombre y Apellidos</label>
+  <input
+    type="text" class="form-control" [(ngModel)]="nombre" placeholder="Complete su nombre y apellidos"/>
+  <button type="submit" class="btn btn-primary" *ngIf="nombre; else desactivado">Enviar</button>
+  <ng-template #desactivado>
+    <button type="submit" class="btn btn-primary" disabled>Enviar</button>
+  </ng-template>
+</div>
+
+<div class="container">
+  <h1>NGIF ejercicio</h1>
+  <input type="text" #name/>
+  <br/><br />
+  <input type="text" #apellido />
+  <br /><br />
+  <button (click)="on()">Registrar</button>
+  <p *ngIf="registro; else noRegistrado">
+    Usuario registrado correctamente con nombre: {{ name.value }}
+    {{ apellido.value }}
+  </p>
+  <ng-template #noRegistrado>
+    <p>No hay usuario registrado.</p>
+  </ng-template>
+
+</div>
