@@ -1,3 +1,7 @@
+.container{
+    display: grid;
+    place-items: center;
+}
 h1{
     padding: 50px;
     text-align: center;
@@ -5,7 +9,7 @@ h1{
 .cancion{
     width: 500px;
     display: flex;
-    margin: 40px auto;
+    margin: 10px auto;
     box-sizing: border-box;
     border-radius: 200px;
     transition: 0.3s;
@@ -13,7 +17,6 @@ h1{
 .cancion:hover{
     background-color: #fca311;
     /* box-shadow: 3px 5px 7px 2px #000000; */
-    color: white;
 }
 .cancion:hover > p{
     text-shadow: 2px 2px 2px black;
@@ -33,7 +36,7 @@ button{
     padding: 15px;
     border: none;
     border-radius: 30px;
-    background-color: #14213d;
+    background-color: #305197;
     color: white;
     font-weight: 600;
     /* box-shadow: 3px 5px 7px 2px #000000; */
@@ -43,4 +46,24 @@ button:hover{
     background-color: #567cce;
     cursor: pointer;
     border-radius: 0px;
+}
+
+.crear{
+    width: 200px;
+    margin: 50px;
+    padding: 15px;
+    border: none;
+    border-radius: 0px;
+    background-color: #189b34;
+    color: white;
+    font-weight: 600;
+    /* box-shadow: 3px 5px 7px 2px #000000; */
+    transition: 0.5s;
+    text-shadow: 2px 2px 2px black;
+
+}
+.crear:hover{
+    background-color: #026e1d;
+    cursor: pointer;
+    transform: scale(1.2);
 }

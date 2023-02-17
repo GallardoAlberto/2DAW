@@ -28,10 +28,8 @@ export class MusicaComponent implements OnInit {
     }
   }
 
-  pasarArray() {
-    this.router.navigate([], { state: { playlist1: this.playlist1 } });
+  goToPlaylist(){
+    this.router.navigate(['/playlist'], { queryParams: { playlist1: JSON.stringify(this.playlist1) } });
   }
-
-
   
 }

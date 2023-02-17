@@ -2,7 +2,8 @@
     <h1>Música</h1>
     <div class="cancion" *ngFor="let cancion of canciones">
         <p>{{cancion}}</p>
-        <button (click)="addToPlaylist(cancion)" (click)="pasarArray()">Añadir a la playlist</button>
+        <button (click)="addToPlaylist(cancion)">Añadir a la playlist</button>
     </div>
     
+    <button class="crear" (click)="goToPlaylist()">Crear Playlist</button>
 </div>

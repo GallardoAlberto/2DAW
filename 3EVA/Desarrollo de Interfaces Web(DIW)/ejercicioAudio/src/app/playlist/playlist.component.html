@@ -1,1 +1,6 @@
-<p>playlist works!</p>
+<div class="container" *ngFor="let playlist of playlist1">
+    <p>{{playlist}}</p>
+    <audio src="../../assets/{{playlist}}" controls></audio>
+    <div class="container--controls">
+    </div>
+</div>
