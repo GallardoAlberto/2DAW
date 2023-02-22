@@ -1,0 +1,41 @@
+<<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Usuarios aleatorios</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main></main>
+<script src="accion.js"></script>
+</body>
+</html>
+
+
+fichero acción.js
+var main=document.querySelector("main") ;
+const url='https://randomuser.me/api/';
+fetch(url)
+.then ((resp) => resp.json())
+.then(data=>{
+let datos=data.results[0];
+let foto=datos.picture.large;
+let mail=datos.email;
+let nombre=datos.name.first;
+let apellido=datos.name.last;
+let numero=datos.location.street.number;
+let calle=datos.location.street.name;
+let ciudad=datos.location.city;
+let estado=datos.location.state;
+main.innerHTML=`<figure>` + `<img src='${foto}' alt='foto'>` +`<figure>` +
+`<p>${nombre} ${apellido} </p>` +
+`<p>Email: ${mail} </p>` +
+`<p>${numero} ${calle} </p>` +
+`${ciudad} (${estado.toUpperCase()}) </p>`;
+})
+_________________________________________________________________________
+8
+Ajax
+_________________________________________________________________________
+.catch(error=>{main.innerHTML=`<p class='error'>${error}</p>`;
+});
