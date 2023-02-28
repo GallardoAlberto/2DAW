@@ -1,11 +1,25 @@
-html {
+*{
+  padding: 0;
+  margin: 0 ;
+} 
+  html {
   font-family: sans-serif;
-}
-main {
-  text-align: center;
 }
 p {
   margin: 0;
+}
+.lista{
+  margin: 0 auto;
+  list-style-type: none;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  text-align: center;
+  width: 80%;
+}
+.lista li{
+  padding: 50px 0;
+  box-sizing: border-box;
 }
 .error {
   background-color: red;

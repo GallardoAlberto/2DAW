@@ -1,0 +1,21 @@
+<h1>Viajes</h1>
+
+<p>Elige ciudad:</p>
+<input type="text" [(ngModel)]="destino">
+<button *ngIf="destino != '' && click == false" (click)="comprobarDestino(destino)">Actividades</button>
+<button *ngIf="click == true" (click)="click = false">Ocultar</button>
+
+<div class="actividades" *ngIf="destinoValor == 'Londres' && click == true">
+  <p>{{mensaje}}</p>
+  <app-actividades [destinoValor]="destinoValor" (mensajeEnviado)="mensaje=$event"></app-actividades>
+</div>
+
+<div class="actividades" *ngIf="destinoValor == 'Berlín' && click == true">
+  <p>{{mensaje}}</p>
+  <app-actividades [destinoValor]="destinoValor" (mensajeEnviado)="mensaje=$event"></app-actividades>
+</div>
+
+<div class="error" *ngIf="(destinoValor != 'Londres' && destinoValor != 'Berlín') && click == true">
+  <p>No tenemos este destino disponible</p>
+</div>
+

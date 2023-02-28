@@ -1,0 +1,8 @@
+<div class="container">
+  <ul>
+    <li *ngFor="let actividad of (destinoValor == 'Londres' ? londres : berlin); let i = index" [class.selected]="selected === i">
+      {{actividad}}
+      <button *ngIf="!click" (click)="selected = i; click = true; enviarMensaje(actividad)">Comprar</button>
+    </li>
+  </ul>
+</div>

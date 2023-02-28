@@ -1,0 +1,120 @@
+* {
+  margin: 0%;
+  padding: 0%;
+  font-family: sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding: 50px;
+}
+.palabra1 {
+  display: flex;
+  justify-content: center;
+}
+
+.palabra1__letra {
+  border: 2px solid #ced2d8;
+  border-radius: 7px;
+  margin: 5px;
+  border-radius: 7px;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+.palabra2 {
+  display: flex;
+  justify-content: center;
+}
+
+.palabra2__letra {
+  border: 2px solid #ced2d8;
+  border-radius: 7px;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+.palabra3 {
+  display: flex;
+  justify-content: center;
+}
+
+.palabra3__letra {
+  border: 2px solid #ced2d8;
+  border-radius: 7px;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+.palabra4 {
+  display: flex;
+  justify-content: center;
+}
+
+.palabra4__letra {
+  border: 2px solid #ced2d8;
+  border-radius: 7px;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+.palabra5 {
+  display: flex;
+  justify-content: center;
+}
+
+.palabra5__letra {
+  border: 2px solid #ced2d8;
+  border-radius: 7px;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+.palabra6 {
+  display: flex;
+  justify-content: center;
+}
+
+.palabra6__letra {
+  border: 2px solid #ced2d8;
+  border-radius: 7px;
+  margin: 5px;
+  width: 70px;
+  height: 70px;
+}
+
+/* TECLADO */
+
+.teclado{
+    padding: 50px 0;
+}
+.teclado .superior,.medio,.inferior{
+    display: flex;
+    justify-content: center;
+}
+
+.teclado .superior div{
+    border-radius: 7px;
+    margin: 5px;
+    padding: 30px 20px;
+    background-color: #e2e8f0;
+}
+
+.teclado .medio div{
+    border-radius: 7px;
+    margin: 5px;
+    padding: 30px 20px;
+    background-color: #e2e8f0;
+}
+
+.teclado .inferior div{
+    border-radius: 7px;
+    margin: 5px;
+    padding: 30px 20px;
+    background-color: #e2e8f0;
+}

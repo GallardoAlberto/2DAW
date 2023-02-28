@@ -1,0 +1,13 @@
+li{
+    padding: 10px;
+}
+button{
+    margin: 0 20px;
+}
+.selected {
+    background-color: #b72828;
+    color: white;
+    width: 400px;
+    text-align: center;
+    list-style: none;
+}
