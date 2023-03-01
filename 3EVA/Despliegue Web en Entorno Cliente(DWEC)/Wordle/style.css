@@ -8,12 +8,17 @@ h1 {
   text-align: center;
   padding: 50px;
 }
-.palabra1 {
-  display: flex;
-  justify-content: center;
+.juego {
+  width: 0%;
+  margin: 0 auto;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(5, 1fr);
+  justify-content: center; /* Centra horizontalmente */
+  align-content: center; /* Centra verticalmente */
 }
 
-.palabra1__letra {
+.juego__letra {
   font-size: 27px;
   display: grid;
   place-items: center;
@@ -26,96 +31,24 @@ h1 {
   height: 70px;
 }
 
-.palabra2 {
+.palabra {
   display: flex;
   justify-content: center;
-}
-
-.palabra2__letra {
-  border: 2px solid #ced2d8;
-  border-radius: 7px;
-  margin: 5px;
-  width: 70px;
-  height: 70px;
-}
-
-.palabra3 {
-  display: flex;
-  justify-content: center;
-}
-
-.palabra3__letra {
-  border: 2px solid #ced2d8;
-  border-radius: 7px;
-  margin: 5px;
-  width: 70px;
-  height: 70px;
-}
-
-.palabra4 {
-  display: flex;
-  justify-content: center;
-}
-
-.palabra4__letra {
-  border: 2px solid #ced2d8;
-  border-radius: 7px;
-  margin: 5px;
-  width: 70px;
-  height: 70px;
-}
-
-.palabra5 {
-  display: flex;
-  justify-content: center;
-}
-
-.palabra5__letra {
-  border: 2px solid #ced2d8;
-  border-radius: 7px;
-  margin: 5px;
-  width: 70px;
-  height: 70px;
-}
-
-.palabra6 {
-  display: flex;
-  justify-content: center;
-}
-
-.palabra6__letra {
-  border: 2px solid #ced2d8;
-  border-radius: 7px;
-  margin: 5px;
-  width: 70px;
-  height: 70px;
 }
 
 /* TECLADO */
 
 .teclado{
-    padding: 50px 0;
+  width: 0%;
+  margin: 70px auto;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 }
-.teclado .superior,.medio,.inferior{
-    display: flex;
-    justify-content: center;
-}
-
-.teclado .superior div{
-    border-radius: 7px;
-    margin: 5px;
-    padding: 30px 20px;
-    background-color: #e2e8f0;
-}
-
-.teclado .medio div{
-    border-radius: 7px;
-    margin: 5px;
-    padding: 30px 20px;
-    background-color: #e2e8f0;
-}
-
-.teclado .inferior div{
+.teclado div{
+    text-align: center;
     border-radius: 7px;
     margin: 5px;
     padding: 30px 20px;
