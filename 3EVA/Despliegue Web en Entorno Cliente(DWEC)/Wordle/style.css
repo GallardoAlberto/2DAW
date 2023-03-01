@@ -14,6 +14,9 @@ h1 {
 }
 
 .palabra1__letra {
+  font-size: 27px;
+  display: grid;
+  place-items: center;
   border: 2px solid #ced2d8;
   border-radius: 7px;
   margin: 5px;
