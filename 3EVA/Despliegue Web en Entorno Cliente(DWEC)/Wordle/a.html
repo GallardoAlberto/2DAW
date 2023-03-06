@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <label for="">Introduce tu nombre</label><input type="text" name="" id="nombre">
+        <button id="datos">enviar nombre</button>
+    </form>
+    <div id="mostrar">
+
+    </div>
+    <script>
+        let mostrar = document.getElementById("mostrar");
+        let enviar = document.getElementById("datos");
+        let mostrarDatos = localStorage.getItem("nombre");
+
+
+        if (mostrarDatos) {
+
+            mostrarDatos.split(",");
+            let p = document.createElement("p");
+            let content = document.createTextNode("Hola, bienvenido " + mostrarDatos);
+            p.appendChild(content);
+            mostrar.appendChild(p);
+        }
+
+        enviar.addEventListener("click", function (ev) {
+            let nombre = document.getElementById("nombre").value;
+
+            let datos = localStorage.setItem("nombre", nombre);
+            ev.preventDefault();
+            nombre = "";
+
+          
+        });
+
+    </script>
+</body>
+
+</html>
