@@ -1,0 +1,11 @@
+<div class="container" *ngFor="let personaje of personajes; let i = index" [ngClass]="{favorito : i == seleccionado}">
+    <h2>{{personaje.nombre}}</h2>
+    <ul>
+        <li>{{personaje.caracteristica1}}</li>
+        <li>{{personaje.caracteristica2}}</li>
+        <li>{{personaje.caracteristica3}}</li>
+    </ul>
+    <button (click)="goEditar(personaje.nombre, personaje.caracteristica1, personaje.caracteristica2, personaje.caracteristica3)">EDITAR PERSONAJE</button>
+    <app-favorito (añadirFav)="mostrar($event, i)"></app-favorito>
+    <p *ngIf="seleccionado == i">{{favorito}}</p>
+</div>

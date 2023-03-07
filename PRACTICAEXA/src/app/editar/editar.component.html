@@ -1,0 +1,12 @@
+<div class="container">
+    <h1>Estas editando: {{personajeNombre}}</h1>
+    <ul>
+        <li>{{editarC1}} <input type="text" [(ngModel)]="editarC1"> </li>
+        <li>{{editarC2}} <input type="text" [(ngModel)]="editarC2"></li>
+        <li>{{editarC3}} <input type="text" [(ngModel)]="editarC3"></li>
+    </ul>
+
+    <button (click)="editarPersonaje(personajeNombre, editarC1, editarC2, editarC3)">EDITAR</button>
+    <button (click)="goBack()">VOLVER A PERSONAJES</button>
+</div>
+
