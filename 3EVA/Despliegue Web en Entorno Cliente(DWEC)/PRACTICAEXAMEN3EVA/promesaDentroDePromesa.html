@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+
+        let num1 = 9;
+        let num2 = 5;
+        let num3 = 1;
+
+        let promesa1 = new Promise((verdad, falso) => {
+            if(num1 == 9) verdad(console.log("Es 10 el número 1"));
+            else falso(console.log("No es 10"));
+        })
+
+        promesa1
+
+        .then((resultadoVerdad) => {
+             console.log(num1 + num2);
+             let promesa2 = new Promise((verdad, falso) => {
+                if(num1 + num2 == 15) verdad(console.log("Es 15 la suma"));
+                else falso(console.log("No es 15 la suma"))
+             })
+
+             promesa2 
+
+             .then((resultadoVerdad) => {
+                console.log("Verdad");
+             })
+
+             .catch((error) => {
+                console.log(Error("Esto es el colega del moha"));
+             })
+        })
+
+        .catch((error) => {
+            console.log(Error("Moha"));
+        })
+    </script>
+</body>
+</html>

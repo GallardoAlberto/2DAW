@@ -74,17 +74,14 @@
 
         btnvolumeUp.addEventListener("click", () => {
           audio.volume += 0.1;
-          localStorage.setItem("volume", audio.volume);
         });
 
         btnvolumeDown.addEventListener("click", () => {
           audio.volume -= 0.1;
-          localStorage.setItem("volume", audio.volume);
         });
 
         btnmuted.addEventListener("click", () => {
           audio.volume = 0;
-          localStorage.setItem("volume", audio.volume);
         });
       </script>
     </section>

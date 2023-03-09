@@ -1,0 +1,50 @@
+/* Modificar que podamos jugar con la apariencia */
+.controlVolume {
+    appearance: none;
+}
+
+/* Modificar el estilo del "puntero" en Chrome y Safari */
+.controlVolume::-webkit-slider-thumb {
+    background-image: linear-gradient(to bottom right, #ff09b1, #040000);
+    border: 1px solid black;
+    margin: -5px 0;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    -webkit-appearance: none;
+}
+
+/* Modificar el estilo de la barra */
+.controlVolume::-webkit-slider-runnable-track {
+    box-shadow: 2px 2px 3px #4b4b4b;
+    height: 10px;
+    background-image: linear-gradient(to bottom right, #1e90ff, #ff0000);
+    border-radius: 20px;
+    border: 1px solid black;
+    -webkit-appearance: none;
+}
+
+/* Modificar que podamos jugar con la apariencia */
+.tiempo {
+    width: 80%;
+    appearance: none;
+}
+
+/* Modificar el estilo del "puntero" en Chrome y Safari */
+.tiempo::-webkit-slider-thumb {
+    background-image: linear-gradient(to bottom right, #ff09b1, #040000);
+    border: 1px solid black;
+    margin: -5px 0;
+    height: 20px;
+    width: 20px;
+    -webkit-appearance: none;
+}
+
+/* Modificar el estilo de la barra */
+.tiempo::-webkit-slider-runnable-track {
+    box-shadow: 2px 2px 3px #4b4b4b;
+    height: 10px;
+    background-image: linear-gradient(to bottom right, #1e90ff, #ff0000);
+    border: 1px solid black;
+    -webkit-appearance: none;
+}

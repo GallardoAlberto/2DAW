@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Escribe una función que tome un número como argumento y devuelva una promesa que se resuelva con el número multiplicado 
+    por dos después de un segundo de retraso. Si el argumento no es un número, la promesa debe ser rechazada con un mensaje 
+    de error. -->
+
+    <script>
+        let numero = parseInt(prompt("METE A MOHA"));
+
+
+        let miPromesa = new Promise((si,no) => {
+            setTimeout(() => {
+                if(!isNaN(numero))si(numero * 2);
+                else no(Error("No es un número"));
+            }, 1000);
+
+        })
+
+        miPromesa
+            .then(resultado =>{
+                alert(resultado);
+            })
+            .catch(error =>{
+                alert(error);
+            })
+
+    </script>
+</body>
+</html>

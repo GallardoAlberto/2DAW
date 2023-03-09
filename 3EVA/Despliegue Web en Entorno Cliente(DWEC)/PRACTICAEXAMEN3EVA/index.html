@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="input_range.css">
+</head>
+
+<body>
+
+    <audio class="audio"></audio>
+    <button class="play_pause"><i class="fa-solid fa-play"></i></button>
+    <input type="range" class="controlVolume" min="0" max="1" step="0.1">
+    <button class="backward"><i class="fa-solid fa-backward"></i></button>
+    <button class="forward"><i class="fa-solid fa-forward"></i></button>
+
+    <input type="range" class="tiempo" value="0">
+
+    <script>
+
+        let canciones = ['audio1.mp3', 'audio2.mp3', 'audio3.mp3',]
+        let audio = document.querySelector('.audio');
+        let play_pause = document.querySelector('.play_pause');
+        let icono_play_pause = play_pause.querySelector('i');
+        let controlVolume = document.querySelector('.controlVolume');
+        let forward = document.querySelector('.forward');
+        let backward = document.querySelector('.backward');
+        let tiempo = document.querySelector('.tiempo');
+
+        let controlarCancion = false;
+
+        window.addEventListener("beforeunload", () => {
+            localStorage.setItem("volume", audio.volume);
+        });
+
+        window.addEventListener("load", () => {
+            audio.volume = localStorage.getItem("volume") || 0.5;
+            controlVolume.value = localStorage.getItem("volume") || 0.5;
+        });
+
+        let cancionActiva = 0;
+
+        play_pause.addEventListener('click', () => {
+            audio.src = canciones[cancionActiva];
+
+            let promesa = new Promise((verdadero, falso) => {
+                if (controlarCancion == false) verdadero(console.log(controlarCancion));
+                else falso(Error(console.log(controlarCancion)));
+            });
+
+            promesa
+
+                .then((si) => {
+                    audio.play();
+                    icono_play_pause.classList.remove('fa-play');
+                    icono_play_pause.classList.add('fa-pause');
+                    controlarCancion = true;
+                })
+
+                .catch((no) => {
+                    audio.pause();
+                    icono_play_pause.classList.remove('fa-pause');
+                    icono_play_pause.classList.add('fa-play');
+                    controlarCancion = false;
+                })
+        })
+
+        controlVolume.addEventListener('input', () => {
+            audio.volume = controlVolume.value;
+            localStorage.setItem('volume', audio.volume);
+        })
+
+        forward.addEventListener('click', () => {
+
+            cancionActiva++;
+
+            let promesa = new Promise((verdadero,falso) => {
+                if (cancionActiva == canciones.length) verdadero(console.log("Vuelve a 0"));
+                else falso(console.log("Se reproduce la siguiente"));
+            })
+
+            promesa
+
+            .then((verdad) => {
+                cancionActiva = 0;
+                audio.src = canciones[cancionActiva];
+                audio.play();
+            })
+            .catch((error) => {
+                audio.src = canciones[cancionActiva];
+                audio.play();
+            })
+
+        })
+
+        backward.addEventListener('click', () => {
+
+            cancionActiva--;
+
+            console.log(cancionActiva);
+
+            if (cancionActiva < 0) {
+                cancionActiva = canciones.length - 1;
+                audio.src = canciones[cancionActiva];
+                audio.play();
+            } else {
+                audio.src = canciones[cancionActiva];
+                audio.play();
+            }
+
+        });
+
+        audio.addEventListener("ended", () => {
+
+            cancionActiva++;
+
+            if (cancionActiva == canciones.length) {
+                cancionActiva = 0;
+                audio.src = canciones[cancionActiva];
+                audio.play();
+            } else {
+                audio.src = canciones[cancionActiva];
+                audio.play();
+            }
+
+        });
+
+        tiempo.addEventListener('input', ()=> {
+             audio.currentTime = tiempo.value;
+             console.log(audio.currentTime);
+        })
+
+        audio.addEventListener("loadedmetadata", (e) => {
+            let minutesDuration = Math.floor(audio.duration / 60);
+            let secondsDuration = Math.floor(audio.duration % 60);
+            let duracion = `${minutesDuration}:${secondsDuration
+                .toString()
+                .padStart(2, "0")}`;
+        });
+
+        audio.addEventListener("timeupdate", (e) => {
+            let percentComplete = (audio.currentTime / audio.duration) * 100;
+            tiempo.value = audio.currentTime;
+            let minutes = Math.floor(audio.currentTime / 60);
+            let seconds = Math.floor(audio.currentTime % 60);
+            let FormatoDelTiempo = `${minutes}:${seconds
+                .toString()
+                .padStart(2, "0")}`;
+            let minutesDuration = Math.floor(audio.duration / 60);
+            let secondsDuration = Math.floor(audio.duration % 60);
+            let duracion = `${minutesDuration}:${secondsDuration
+                .toString()
+                .padStart(2, "0")}`;
+
+            tiempo.max = audio.duration;
+        });
+
+    </script>
+
+    <script src="https://kit.fontawesome.com/c98f52caa2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
